@@ -1,0 +1,128 @@
+---------------------------PRIME----------------------------------------
+
+部门属性表(com_department)
+名称		类型		约束					说明
+id		int(4)		非空，无重复，主键			部门标识
+name		varchar(40)	非空，无重复				部门名
+mgr		int(10)		非空，关联emp_info.id			部门经理
+addr		varchar(50)						部门地址
+info		varchar(100)	默认为"无"				部门信息
+parent_dep_id	int(4)		关联com_department.id			上级部门ID
+
+员工信息表(emp_info)
+名称		类型		约束					说明
+id		int(10)		非空，无重复，主键			员工ID
+password	char(30)	非空					员工密码
+email		varchar(30)	非空，无重复				员工邮箱
+phone_number	char(11)	非空，无重复				员工电话号码
+name		varchar(20)	非空					员工姓名
+birthday	date		非空					员工出生日期
+political	varchar(20)	非空					政治面貌(有字典)
+health		varchar(10)	非空					健康状况(有字典)
+title		varchar(10)	非空，关联employee_title.name		职称
+dep_id		int(4)		关联department.id			所属部门
+time_register	timestamp	非空，自动生成				注册日期
+
+岗位表(com_post)
+名称		类型		约束					说明
+id		int(5)		非空，无重复，主键			岗位ID
+name		varchar(40)	非空，无重复				岗位名
+type		varchar(20)	非空					岗位类型(有字典)
+level		int(3)		非空					岗位级别
+post_salary	int		非空					岗位基础薪资
+
+在职表(com_posting)
+名称		类型		约束					说明
+emp_id		int(10)		非空，主键，关联emp_info.id		任职员工id
+post_id		int(5)		非空，主键，关联com_post.id		岗位ID
+status		varchar(10)	非空					状态(有字典)
+
+
+任免记录表（log_post)
+名称		类型		约束					说明
+id		int		非空，无重复，主键，自增长		任职编码
+emp_id		int(10)		非空，关联emp_info.id			任职员工id
+post_type	varchar(20)	非空，关联dict_info.dict_code		任免类型(有字典)
+from_post_id	int		关联com_post.id				离职岗位id
+to_post_id	int		关联com_post.id				任职岗位id
+from_dep_id	int(4)		关联com_department.id			离职部门id
+to_dep_id	int(4)		关联com_department.id			任职部门id
+applicant_id	int(10)		非空，关联emp_info.id			任免负责人
+reviewer_id	int(10)		非空，关联emp_info.id			任免处理人
+plan_id		int(10)		关联com_plan.id				所属计划
+post_time	date		非空					任免时间
+post_info	varchar(100)	默认为"无"				任免信息	
+
+考勤表(log_attendance)
+名称		类型		约束					说明
+id		int(10)		非空，无重复，主键			考勤记录ID
+date		date		非空					记录日期
+emp_id		int(10)		非空，关联employee_info.id		相关职工ID
+info		char(40)	非空					考勤信息
+value		int(10)		默认为0					工资奖罚
+type		varchar(20)	非空，关联dict_info.dict_code		考勤类型（有字典）
+
+职称表(emp_title)
+名称		类型		约束					说明
+name		varchar(10)	非空，无重复，主键			职称名
+level		int		非空					职称级别
+
+计划表(com_plan)
+名称		类型		约束					说明
+id		int(10)		非空，无重复，主键			招聘计划编号
+status		varchar(20)	非空，关联dict_info.dict_code		计划状态（有字典）
+post_id		int		非空，关联post.id			招聘岗位
+dep_id		int(4)		非空，关联department.id			招聘部门
+expect_num	int
+time_start	date
+time_end	date
+time_create	timestamp
+creator_id	int(10)
+host_id		int(10)
+
+字典类型表(dict_type)		//字典内容不会成为其他表的外键，并一般仅作为文本关注其内容，而不注重其序号
+名称		类型		约束					说明
+id		int		非空，无重复，主键			类型ID
+name		varchar(40)	非空，无重复				类型名称
+parent_id	int(10)		关联dict_type.id			父类型ID
+
+字典明细表(dict_info)
+名称		类型		约束					说明
+id		int		非空，无重复，主键			字典明细ID
+type_id		int		非空，关联dict_type.id			所属类型ID
+version_id	int		默认为0					版本ID，缺省为0，可做语言控制或版本控制等
+dict_code	varchar(20)						查询ID
+value		varchar(50)	非空					值
+
+--------------------ADDITION-----------------------------------------				
+
+权限表(com_authority)
+名称		类型		约束					说明
+id		int(3)		非空，无重复，主键			权限ID
+name		varchar(30)	非空，无重复				权限名
+level		int(2)		非空					权限级别
+is_log		bool		非空					是否记录调用
+is_enable	bool		非空					权限状态
+
+授权表(com_auth_grant）
+名称		类型		约束					说明
+id		int(5)		非空，无重复，主键			授权ID
+post_id		int(5)		非空，关联com_post.id			岗位ID
+auth_id		int(3)		非空，关联com_authority.id		权限ID
+is_enable	bool		非空					授权状态
+
+项目类
+
+类别转换
+
+
+人事变动记录(log_
+
+简历表
+
+数据字典
+
+字典表
+
+
+	
