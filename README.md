@@ -2,4 +2,5 @@
 ## Environments
 - html5
 - springboots
-- mysql
+- mysql5.7
+- jdk10
