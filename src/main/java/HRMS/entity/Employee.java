@@ -41,7 +41,7 @@ public class Employee {
         this.registerTime = LocalDateTime.now();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
