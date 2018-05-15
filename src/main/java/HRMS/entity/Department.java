@@ -18,8 +18,6 @@ public class Department {
 
     private String info;
 
-    @Column(name = "parent_dep_id")
-    private int parent;
 
     public int getId() {
         return id;

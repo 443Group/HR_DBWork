@@ -22,25 +22,26 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        List<GrantedAuthority> ah = new ArrayList<GrantedAuthority>();
-        ah.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
-        ah.add(new SimpleGrantedAuthority("ROLE_USER"));
+//        List<GrantedAuthority> ah = new ArrayList<GrantedAuthority>();
+//        ah.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
+//        ah.add(new SimpleGrantedAuthority("ROLE_USER"));
+//
+//        return new User("user","ee11cbb19052e40b07aac0ca060c23ee",ah);
 
-        return new User("user","ee11cbb19052e40b07aac0ca060c23ee",ah);
-
-/*        Optional<Employee> user = employeeRepository.findById(Integer.valueOf(username));
+        Optional<Employee> user = employeeRepository.findById(Long.valueOf(username));
         if (user.isPresent()) {
-            Employee admin = user.get();
+            Employee employee = user.get();
+            System.out.println("User: "+employee.getId());
+            System.out.println("Password: "+employee.getPassword());
             List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-            authorities.add(new SimpleGrantedAuthority("ROLE_ADMIN"));
             authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
             return new User(
-                    admin.getId().toString(),
-                    admin.getPassword(),
+                    employee.getId().toString(),
+                    employee.getPassword(),
                     authorities);
 
         }
         throw new UsernameNotFoundException(
-                "Employee '" + username + "' not found.");*/
+                "Employee '" + username + "' not found.");
     }
 }

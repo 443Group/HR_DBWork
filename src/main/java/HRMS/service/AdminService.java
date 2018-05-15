@@ -24,7 +24,7 @@ public class AdminService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-        Optional<Admin> user = adminRepository.findById(Integer.valueOf(username));
+        Optional<Admin> user = adminRepository.findById(Long.valueOf(username));
         if (user.isPresent()) {
             Admin admin = user.get();
             List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();

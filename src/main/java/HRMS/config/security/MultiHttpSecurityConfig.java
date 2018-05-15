@@ -18,6 +18,11 @@ import org.springframework.security.crypto.password.MessageDigestPasswordEncoder
 @EnableWebSecurity
 public class MultiHttpSecurityConfig {
 
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder(){
+        return new BCryptPasswordEncoder();
+    }
+
     @Configuration
     @Order(1)
     public static class AdminLoginWebSecurityConfigurationAdapter extends WebSecurityConfigurerAdapter {
@@ -30,12 +35,12 @@ public class MultiHttpSecurityConfig {
 //        AdminService adminService;
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/admin.html")
+                    .antMatcher("/login/admin")
                     .exceptionHandling()
                         .authenticationEntryPoint(new UnauthorizedEntryPoint())
                         .and()
                     .authorizeRequests()
-                        .anyRequest().hasRole("ADMIN")
+                        .anyRequest().permitAll()
                         .and()
                     .formLogin()
                         .loginPage("/login.html")
@@ -47,7 +52,7 @@ public class MultiHttpSecurityConfig {
                         .permitAll()
                         .and()
                     .logout()
-                        .logoutUrl("/logout.html")
+                        .logoutUrl("/logout")
                         .permitAll();
 //                        .and()
 //                    .userDetailsService(adminService);
@@ -63,10 +68,6 @@ public class MultiHttpSecurityConfig {
             return new UserService();
         }
 
-        public void configure(AuthenticationManagerBuilder auth) throws Exception {
-            auth.userDetailsService(userDetailsService()).passwordEncoder(new MessageDigestPasswordEncoder("MD5"));
-        }
-
         @Override
         protected void configure(HttpSecurity http) throws Exception {
             http
@@ -76,8 +77,9 @@ public class MultiHttpSecurityConfig {
                     .csrf().disable()
                     .authorizeRequests()
                        .antMatchers("/login/**","/css/**", "/js/**","/assets/**","/fonts/**","/img/**","/404.html").permitAll()
+                       .antMatchers("/admin.html").hasRole("ADMIN")
                        .anyRequest().authenticated()
-                        .and()
+                       .and()
                     .formLogin()
                         .loginPage("/login.html")
                         .loginProcessingUrl("/login/user")
@@ -88,7 +90,7 @@ public class MultiHttpSecurityConfig {
                         .permitAll()
                         .and()
                     .logout()
-                        .logoutUrl("/logout.html")
+                        .logoutUrl("/logout")
                         .permitAll();
 //                        .and()
 //                    .userDetailsService(userService);

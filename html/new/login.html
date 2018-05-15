@@ -25,83 +25,39 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 
-<!--    <link href="css/bootstrapValidator.min.css" rel="stylesheet" />
-    <script src="js/bootstrapValidator.min.js"></script>-->
-    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <link href="css/rainbow-loader.css" rel="stylesheet">
 
-    <script type="text/javascript">
-        /*$(function () {
-            $("#form-test").bootstrapValidator({
-                excluded: [':disabled', ':hidden', ':not(:visible)'],//排除无需验证的控件，比如被禁用的或者被隐藏的
-                submitButtons: ['#user','#admin'],//指定提交按钮，如果验证失败则变成disabled，但我没试成功，反而加了这句话非submit按钮也会提交到action指定页面
-                message: '验证失败',
-                feedbackIcons: {//根据验证结果显示的各种图标
-                    valid: 'glyphicon glyphicon-ok',
-                    invalid: 'glyphicon glyphicon-remove',
-                    validating: 'glyphicon glyphicon-refresh'
-                },
-                fields: {
-                    id: {
-                        validators: {
-                            notEmpty: {//检测非空,radio也可用
-                                message: '员工ID不能为空'
-                            },
-                            numeric: {
-                                message: '员工ID只能输入数字'
-                            },
-                        }
-                    },
-                    password: {
-                        validators: {
-                            notEmpty: {//检测非空,radio也可用
-                                message: '密码不能为空'
-                            },
-                        }
-                    }
-                }
-            });
-        })*/
-
-        $().ready(function (){
-            $("#user").click(function(){
-                alert(2);
-                $.ajax({
-                    url: '/login/user',
-                    type: 'POST',
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
-                    success: function (res, status) {
-                        window.location.href='/index.html'
-                    },
-                    error: function (res, status) {
-                        alert(res);
-                    }
-                });
-            });
-            $("#admin").click(function(){
-                $.ajax({
-                    url: '/login/admin',
-                    type: 'POST',
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
-                    success: function (res, status) {
-                        window.location.href='/admin.html'
-                    },
-                    error: function (res, status) {
-                        alert(res.statusText);
-                    }
-                });
-            });
-        })
-    </script>
 </head>
 
   <body class="login-img3-body">
 
     <div class="container">
 
+    <div class="loader" style="visibility: hidden" id="loader">
+        <div class="loader-inner">
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+            <div class="loader-line-wrap">
+                <div class="loader-line"></div>
+            </div>
+        </div>
+    </div>
+
       <form class="login-form" id="login">
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
-			<br>
+            <br>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
               <input type="text" class="form-control" id="id" placeholder="员工ID" autofocus="autofocus">
@@ -110,18 +66,58 @@
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 <input type="password" class="form-control" id="password" placeholder="密码">
             </div>
-			<br>
+            <br>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> 记住密码
                 <span class="pull-right"><a href="#"> 无法登录？联系管理员</a></span>
             </label>
-            <button class="btn btn-info btn-lg btn-block" id="user" >员工登录</button>
-            <button class="btn btn-info btn-lg btn-block" id="admin" >管理员登录</button>
+            <button class="btn btn-info btn-lg btn-block" id="user" type="button">员工登录</button>
+            <button class="btn btn-info btn-lg btn-block" id="admin" type="button">管理员登录</button>
         </div>
       </form>
 
     </div>
 
+    <script type="text/javascript">
 
+        $().ready(function (){
+            $("#user").click(function(){
+                $("#loader").css("visibility","visible");
+                $.ajax({
+                    url: '/login/user',
+                    type: 'POST',
+                    timeout: 20000,
+                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
+                    "cache" : false,
+                    // "async" : false,
+                    success: function (res, status) {
+                        window.location.href='/index.html'
+                    },
+                    error: function (res, status) {
+                        alert("登录失败"+res.toString()+status);
+                        $("#loader").css("visibility","hidden");
+                    }
+                });
+
+            });
+            $("#admin").click(function(){
+                $(".loader").css("visibility","visible");
+                $.ajax({
+                    url: '/login/admin',
+                    type: 'POST',
+                    timeout: 20000,
+                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
+                    "cache" : false,
+                    success: function (res, status) {
+                        window.location.href='/admin.html'
+                    },
+                    error: function (res, status) {
+                        alert("登录失败");
+                        $(".loader").attr("visibility","hidden");
+                    }
+                });
+            });
+        })
+    </script>
   </body>
 </html>

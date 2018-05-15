@@ -10,7 +10,7 @@ public class Employee {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     //存放密码的MD5值
     private String password;
@@ -24,14 +24,11 @@ public class Employee {
     @Column(name= "phone_number")
     private String phoneNumber;
 
-    private int political;
+    private Integer political;
 
-    private int health;
+    private Integer health;
 
-    private int title;
-
-    @Column(name= "dep_id")
-    private int depId;
+    private Integer title;
 
     @Column(name = "time_register")
     private LocalDateTime registerTime;
@@ -41,12 +38,16 @@ public class Employee {
         this.registerTime = LocalDateTime.now();
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setRegisterTime(LocalDateTime registerTime) {
+        this.registerTime = registerTime;
     }
 
     public String getPassword() {
@@ -89,36 +90,28 @@ public class Employee {
         this.phoneNumber = phoneNumber;
     }
 
-    public int getPolitical() {
+    public Integer getPolitical() {
         return political;
     }
 
-    public void setPolitical(int political) {
+    public void setPolitical(Integer political) {
         this.political = political;
     }
 
-    public int getHealth() {
+    public Integer getHealth() {
         return health;
     }
 
-    public void setHealth(int health) {
+    public void setHealth(Integer health) {
         this.health = health;
     }
 
-    public int getTitle() {
+    public Integer getTitle() {
         return title;
     }
 
-    public void setTitle(int title) {
+    public void setTitle(Integer title) {
         this.title = title;
-    }
-
-    public int getDepId() {
-        return depId;
-    }
-
-    public void setDepId(int depId) {
-        this.depId = depId;
     }
 
     public LocalDateTime getRegisterTime() {
