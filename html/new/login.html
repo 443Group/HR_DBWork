@@ -3,6 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="HR, HRMS">
     <link rel="shortcut icon" href="img/myico1.ico">
 
     <title>Login | Human Resource Management System</title>
@@ -24,100 +27,36 @@
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-    <link href="css/rainbow-loader.css" rel="stylesheet">
-
 </head>
 
   <body class="login-img3-body">
 
     <div class="container">
 
-    <div class="loader" style="visibility: hidden" id="loader">
-        <div class="loader-inner">
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-            <div class="loader-line-wrap">
-                <div class="loader-line"></div>
-            </div>
-        </div>
-    </div>
-
-      <form class="login-form" id="login">
+      <form class="login-form" action="index.html">        
         <div class="login-wrap">
             <p class="login-img"><i class="icon_lock_alt"></i></p>
-            <br>
+			<br>
             <div class="input-group">
               <span class="input-group-addon"><i class="icon_profile"></i></span>
-              <input type="text" class="form-control" id="id" placeholder="员工ID" autofocus="autofocus">
+              <input type="text" class="form-control" placeholder="员工ID" autofocus>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
-                <input type="password" class="form-control" id="password" placeholder="密码">
+                <input type="password" class="form-control" placeholder="密码">
             </div>
-            <br>
+			<br>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> 记住密码
-                <span class="pull-right"><a href="#"> 无法登录？联系管理员</a></span>
+                <span class="pull-right"><a>无法登录？</a><a href="#"> 联系管理员</a></span>
             </label>
-            <button class="btn btn-info btn-lg btn-block" id="user" type="button">员工登录</button>
-            <button class="btn btn-info btn-lg btn-block" id="admin" type="button">管理员登录</button>
+            <button class="btn btn-primary btn-lg btn-block" type="submit">员工登录</button>
+            <button class="btn btn-info btn-lg btn-block" type="submit">管理员登录</button>
         </div>
       </form>
 
     </div>
 
-    <script type="text/javascript">
 
-        $().ready(function (){
-            $("#user").click(function(){
-                $("#loader").css("visibility","visible");
-                $.ajax({
-                    url: '/login/user',
-                    type: 'POST',
-                    timeout: 20000,
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
-                    "cache" : false,
-                    // "async" : false,
-                    success: function (res, status) {
-                        window.location.href='/index.html'
-                    },
-                    error: function (res, status) {
-                        alert("登录失败"+res.toString()+status);
-                        $("#loader").css("visibility","hidden");
-                    }
-                });
-
-            });
-            $("#admin").click(function(){
-                $(".loader").css("visibility","visible");
-                $.ajax({
-                    url: '/login/admin',
-                    type: 'POST',
-                    timeout: 20000,
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
-                    "cache" : false,
-                    success: function (res, status) {
-                        window.location.href='/admin.html'
-                    },
-                    error: function (res, status) {
-                        alert("登录失败");
-                        $(".loader").attr("visibility","hidden");
-                    }
-                });
-            });
-        })
-    </script>
   </body>
 </html>
