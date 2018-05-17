@@ -13,11 +13,7 @@ public class Admin {
     private Long id;
 
     @Column(name= "emp_id")
-    private Integer empId;
-
-    //存放密码的MD5值
-    @Column(name= "admin_password")
-    private String password;
+    private Long empId;
 
     public Long getId() {
         return id;
@@ -27,19 +23,11 @@ public class Admin {
         this.id = id;
     }
 
-    public Integer getEmpId() {
+    public Long getEmpId() {
         return empId;
     }
 
-    public void setEmpId(Integer empId) {
+    public void setEmpId(Long empId) {
         this.empId = empId;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 }

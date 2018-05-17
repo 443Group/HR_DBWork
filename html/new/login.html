@@ -28,6 +28,13 @@
     <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
     <link href="css/rainbow-loader.css" rel="stylesheet">
 
+    <style>
+        #message{
+            text-align: center;
+            color: red;
+        }
+    </style>
+
 </head>
 
   <body class="login-img3-body">
@@ -66,7 +73,7 @@
                 <span class="input-group-addon"><i class="icon_key_alt"></i></span>
                 <input type="password" class="form-control" id="password" placeholder="密码">
             </div>
-            <br>
+            <div id="message" style="visibility: hidden"></div>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me"> 记住密码
                 <span class="pull-right"><a href="#"> 无法登录？联系管理员</a></span>
@@ -79,41 +86,56 @@
     </div>
 
     <script type="text/javascript">
+        function Islogout()
+        {
+            const query = window.location.search.substring(1);
+            const msg = $("#message");
+            if(query === 'logout'){
+                msg.text("您已成功退出！");
+                msg.css("visibility","visible");
+            }
+        }
 
         $().ready(function (){
+            Islogout();
+
             $("#user").click(function(){
                 $("#loader").css("visibility","visible");
                 $.ajax({
-                    url: '/login/user',
+                    url: '/login',
                     type: 'POST',
                     timeout: 20000,
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
+                    data: "id=1#" + $('#id').val() + "&password=" + $('#password').val(),
                     "cache" : false,
                     // "async" : false,
                     success: function (res, status) {
                         window.location.href='/index.html'
                     },
                     error: function (res, status) {
-                        alert("登录失败"+res.toString()+status);
+                        const msg = $("#message");
+                        msg.text("用户名或密码错误！");
+                        msg.css("visibility","visible");
                         $("#loader").css("visibility","hidden");
                     }
                 });
 
             });
             $("#admin").click(function(){
-                $(".loader").css("visibility","visible");
+                $("#loader").css("visibility","visible");
                 $.ajax({
-                    url: '/login/admin',
+                    url: '/login',
                     type: 'POST',
                     timeout: 20000,
-                    data: "id=" + $('#id').val() + "&password=" + $('#password').val(),
+                    data: "id=2#" + $('#id').val() + "&password=" + $('#password').val(),
                     "cache" : false,
                     success: function (res, status) {
                         window.location.href='/admin.html'
                     },
                     error: function (res, status) {
-                        alert("登录失败");
-                        $(".loader").attr("visibility","hidden");
+                        const msg = $("#message");
+                        msg.text("用户名或密码错误！");
+                        msg.css("visibility","visible");
+                        $("#loader").css("visibility","hidden");
                     }
                 });
             });
