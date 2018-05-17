@@ -18,10 +18,6 @@ import org.springframework.security.crypto.password.MessageDigestPasswordEncoder
 @EnableWebSecurity
 public class MultiHttpSecurityConfig {
 
-    @Bean
-    public BCryptPasswordEncoder passwordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
 
     @Configuration
     @Order(1)
@@ -33,18 +29,24 @@ public class MultiHttpSecurityConfig {
         }
 
 //        AdminService adminService;
+        @Bean
+        public BCryptPasswordEncoder passwordEncoder(){
+            return new BCryptPasswordEncoder();
+        }
+
         protected void configure(HttpSecurity http) throws Exception {
             http
-                    .antMatcher("/login/admin")
+                    .antMatcher("/admin/**")
                     .exceptionHandling()
                         .authenticationEntryPoint(new UnauthorizedEntryPoint())
                         .and()
                     .authorizeRequests()
-                        .anyRequest().permitAll()
+                    .antMatchers("/admin/login","/css/**", "/js/**","/assets/**","/fonts/**","/img/**","/404.html").permitAll()
+                    .anyRequest().authenticated()
                         .and()
                     .formLogin()
-                        .loginPage("/login.html")
-                        .loginProcessingUrl("/login/admin")
+                        .loginPage("/admin/login.html")
+                        .loginProcessingUrl("/admin/login")
                         .usernameParameter("id")
                         .passwordParameter("password")
                         .successHandler(new AjaxAuthSuccessHandler())
@@ -53,9 +55,8 @@ public class MultiHttpSecurityConfig {
                         .and()
                     .logout()
                         .logoutUrl("/logout")
-                        .permitAll();
-//                        .and()
-//                    .userDetailsService(adminService);
+                        .permitAll().and()
+                    .userDetailsService(new AdminService());
         }
     }
 
@@ -67,6 +68,10 @@ public class MultiHttpSecurityConfig {
         protected UserDetailsService userDetailsService() {
             return new UserService();
         }
+        @Bean
+        public BCryptPasswordEncoder passwordEncoder(){
+            return new BCryptPasswordEncoder();
+        }
 
         @Override
         protected void configure(HttpSecurity http) throws Exception {
@@ -76,13 +81,12 @@ public class MultiHttpSecurityConfig {
                         .and()
                     .csrf().disable()
                     .authorizeRequests()
-                       .antMatchers("/login/**","/css/**", "/js/**","/assets/**","/fonts/**","/img/**","/404.html").permitAll()
-                       .antMatchers("/admin.html").hasRole("ADMIN")
+                       .antMatchers("/css/**", "/js/**","/assets/**","/fonts/**","/img/**","/404.html").permitAll()
                        .anyRequest().authenticated()
                        .and()
                     .formLogin()
                         .loginPage("/login.html")
-                        .loginProcessingUrl("/login/user")
+                        .loginProcessingUrl("/login")
                         .usernameParameter("id")
                         .passwordParameter("password")
                         .successHandler(new AjaxAuthSuccessHandler())
@@ -93,7 +97,7 @@ public class MultiHttpSecurityConfig {
                         .logoutUrl("/logout")
                         .permitAll();
 //                        .and()
-//                    .userDetailsService(userService);
+//                    .userDetailsService(new UserService());
         }
     }
 
