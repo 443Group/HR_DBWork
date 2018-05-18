@@ -86,7 +86,27 @@
     <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
     <!--custome script for all page-->
     <script src="js/scripts.js"></script>
+  <script>
+      $().ready(function (){
+          $.ajax({
+              url: '/post/',
+              type: 'GET',
+              success: function (res) {
+                  $.each(res, function(i, item){
+                      let content = '';
+                      content += '<td>'+item["id"]+'</td>';
+                      content += '<td>'+item["empId"]+'</td>';
 
+                      content += '<td>'+item["date"].replace("T","  ")+'</td>';
+                      content += '<td>'+item["ip"]+'</td>';
+                      content += '<td>'+'签到完成'+'</td>';
+                      content += '<td>'+'0'+'</td>';
+                      $("#list").append($("<tr></tr>").html(content));
+                  });
+              },
+          });
+      });
+  </script>
 
   </body>
 </html>

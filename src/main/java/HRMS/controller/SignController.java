@@ -52,6 +52,11 @@ public class SignController {
         return attendenceRepository.findByEmpId(Long.valueOf(principal.getName()));
     }
 
+    @GetMapping("/admin/record")
+    public List<Attendence> getAllRecord(Principal principal){
+        return attendenceRepository.findAll();
+    }
+
 
 
     public String getIP(HttpServletRequest request) {

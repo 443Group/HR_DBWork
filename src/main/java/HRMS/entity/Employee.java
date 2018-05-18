@@ -9,7 +9,6 @@ import java.time.LocalDateTime;
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     //存放密码的MD5值

@@ -51,17 +51,17 @@
                           </header>
                           <div class="panel-body">
                               <div class="form">
-                                  <form class="form-validate form-horizontal" id="feedback_form" method="get" action="">
+                                  <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/user/admin/register">
 								  <div class="form-group ">
-                                          <label for="cname" class="control-label col-lg-2">员工ID <span class="required">*</span></label>
+                                          <label for="id" class="control-label col-lg-2">员工ID <span class="required">*</span></label>
                                           <div class="col-lg-6">
-                                              <input class="form-control" id="cname" name="fullname" minlength="10" type="number" required />
+                                              <input class="form-control" id="id" name="id" minlength="10" type="number" required />
                                           </div>
                                       </div>
                                       <div class="form-group ">
-                                          <label for="cname" class="control-label col-lg-2">姓名 <span class="required">*</span></label>
+                                          <label for="name" class="control-label col-lg-2">姓名 <span class="required">*</span></label>
                                           <div class="col-lg-6">
-                                              <input class="form-control" id="cname" name="fullname" minlength="2" type="text" required />
+                                              <input class="form-control" id="name" name="name" minlength="2" type="text" required />
                                           </div>
                                       </div>
 									  <div class="form-group ">
@@ -73,28 +73,38 @@
 									  <div class="form-group">
                                                       <label class="col-lg-2 control-label">电话号码 <span class="required">*</span></label>
                                                       <div class="col-lg-6">
-                                                          <input type="tel" class="form-control" id="phone" name="phone" minlength="11">
+                                                          <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" minlength="11">
                                                       </div>
                                                   </div>
                                       <div class="form-group ">
-                                          <label for="cemail" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
+                                          <label for="email" class="control-label col-lg-2">E-Mail <span class="required">*</span></label>
                                           <div class="col-lg-6">
-                                              <input class="form-control " id="cemail" type="email" name="email" required />
+                                              <input class="form-control " id="email" type="email" name="email" required />
                                           </div>
                                       </div>
 									  <div class="form-group ">
-                                          <label for="cemail" class="control-label col-lg-2">出生日期 <span class="required">*</span></label>
+                                          <label for="birthday" class="control-label col-lg-2">出生日期 <span class="required">*</span></label>
                                           <div class="col-lg-6">
-                                              <input class="form-control " id="cbirthday" type="date" name="birthday" value="1997-01-01" required />
+                                              <input class="form-control " id="birthday" type="date" name="birthday" value="1997-01-01" required />
                                           </div>
                                       </div>
 									  <div class="form-group">
                                       <label class="col-lg-2 control-label">政治面貌 <span class="required">*</span></label>
                                       <div class="col-lg-6">
                                       <select class="form-control m-bot15" id="political" name="political">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
+                                          <option value="7">中共党员</option>
+                                          <option value="8">中共预备党员</option>
+                                          <option value="9">共青团员</option>
+                                          <option value="10">民革党员</option>
+                                          <option value="11">民盟盟员</option>
+                                          <option value="12">民建会员</option>
+                                          <option value="13">民进会员</option>
+                                          <option value="14">农工党党员</option>
+                                          <option value="15">致公党党员</option>
+                                          <option value="16">九三学社社员</option>
+                                          <option value="17">台盟盟员</option>
+                                          <option value="18">无党派人士</option>
+                                          <option value="19">群众</option>
                                           </select>
 										 </div>
 									  </div>
@@ -102,9 +112,26 @@
                                       <label class="col-lg-2 control-label">职称 <span class="required">*</span></label>
                                       <div class="col-lg-6">
                                       <select class="form-control m-bot15" id="title" name="title">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
+                                          <option value="1">助理工程师</option>
+                                          <option value="2">工程师</option>
+                                          <option value="3">高级工程师</option>
+                                          <option value="4">正高级工程师</option>
+                                          <option value="5">助理经济师</option>
+                                          <option value="6">经济师</option>
+                                          <option value="7">高级经济师</option>
+                                          <option value="8">正高级经济师</option>
+                                          <option value="9">助理会计师</option>
+                                          <option value="10">会计师</option>
+                                          <option value="11">高级会计师</option>
+                                          <option value="12">正高级会计师</option>
+                                          <option value="13">助理审计师</option>
+                                          <option value="14">审计师</option>
+                                          <option value="15">高级审计师</option>
+                                          <option value="16">正高级审计师</option>
+                                          <option value="17">四级律师</option>
+                                          <option value="18">三级律师</option>
+                                          <option value="19">二级律师</option>
+                                          <option value="20">一级律师</option>
                                           </select>
 										 </div>
 									  </div>

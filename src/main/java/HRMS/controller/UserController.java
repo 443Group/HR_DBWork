@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.security.Principal;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
 
@@ -79,6 +80,35 @@ public class UserController {
             return "redirect:/404.html";
 
     }
+
+/*    @PostMapping("/admin/register")
+    public String register(Employee employee){
+        employee.setPassword(passwordEncoder.encode(employee.getPassword()));
+        employee.setHealth(2);
+        employee.setBonus(0L);
+        employeeRepository.save(employee);
+        return "redirect:/profile_admin.html?id="+employee.getId();
+    }*/
+
+    @PostMapping("/admin/register")
+    public String register(Long id, String name, String password, String phoneNumber, String birthday,
+                           Integer political,Integer title,String email){
+        Employee employee = new Employee();
+        employee.setId(id);
+        employee.setEmail(email);
+        employee.setName(name);
+        employee.setPassword(passwordEncoder.encode(password));
+        employee.setPhoneNumber(phoneNumber);
+        employee.setBirthday(LocalDate.parse(birthday, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        employee.setPolitical(political);
+        employee.setTitle(title);
+        employee.setHealth(2);
+        employee.setBonus(0L);
+        employeeRepository.save(employee);
+        return "redirect:/home_admin.html";
+    }
+
+
 
     @ResponseBody
     @GetMapping("/salary")
