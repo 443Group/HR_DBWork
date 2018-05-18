@@ -20,7 +20,7 @@ function getUserInfo() {
             addUserInfo(res)
         },
         error: function () {
-            $('.username').text('未获得用户名');
+            alert("连接超时！")
         }
     });
 }
