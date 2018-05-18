@@ -1,6 +1,7 @@
 $().ready(function (){
+    query = window.location.search.substring(0)
     $.ajax({
-        url: '/user/name',
+        url: '/user/name'+query,
         type: 'GET',
         success: function (res) {
             addUserInfo(res)

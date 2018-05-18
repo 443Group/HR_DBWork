@@ -3,21 +3,15 @@ package HRMS.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "com_post")
-public class Post {
-
+@Table(name = "emp_title")
+public class Title {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
 
-    private int level;
-
-    @Column(name = "post_salary")
-    private int salary;
-
-    private int type;
+    private Integer level;
 
     public int getId() {
         return id;
@@ -35,27 +29,11 @@ public class Post {
         this.name = name;
     }
 
-    public int getLevel() {
+    public Integer getLevel() {
         return level;
     }
 
-    public void setLevel(int level) {
+    public void setLevel(Integer level) {
         this.level = level;
-    }
-
-    public int getSalary() {
-        return salary;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
-    public int getType() {
-        return type;
-    }
-
-    public void setType(int type) {
-        this.type = type;
     }
 }

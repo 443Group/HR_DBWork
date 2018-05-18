@@ -18,6 +18,12 @@ public class Department {
 
     private String info;
 
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "parent_dep")
+    private int parent;
+
 
     public int getId() {
         return id;
@@ -59,5 +65,19 @@ public class Department {
         this.info = info;
     }
 
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public int getParent() {
+        return parent;
+    }
+
+    public void setParent(int parent) {
+        this.parent = parent;
+    }
 }
