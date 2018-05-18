@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>表单管理</title>
+
+    <!-- Bootstrap CSS -->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <!-- container section start -->
+  <section id="container" class="">
+		  <div class="row">
+				<div class="col-lg-12">
+					<h3 class="page-header"><i class="fa fa-files-o"></i> 表单管理</h3>
+					<ol class="breadcrumb">
+						<li><i class="fa fa-home"></i><a href="home_admin.html">主页</a></li>
+						<li><i class="fa fa-files-o"></i><a href="issue_list_admin.html">表单列表</a></li>
+						<li><i class="fa fa-files-o"></i>表单管理</li>
+					</ol>
+				</div>
+			</div>
+              <!-- Form validations -->              
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              事务表单
+                          </header>
+                          <div class="panel-body">
+                              <div class="form">
+                                  <form class="form-validate form-horizontal" id="feedback_form" method="post" action="/issue/submit">
+								  <div class="form-group ">
+                                          <label for="cname" class="control-label col-lg-2">员工ID </label>
+                                          <div class="col-lg-6">
+                                              <input class="form-control" id="cname" name="fullname" minlength="10" type="number" required />
+                                          </div>
+                                      </div>
+                                      <div class="form-group ">
+                                          <label for="cname" class="control-label col-lg-2">姓名 </label>
+                                          <div class="col-lg-6">
+                                              <input class="form-control" id="cname" name="fullname" minlength="2" type="text" required />
+                                          </div>
+                                      </div>
+									  <div class="form-group">
+                                      <label class="col-lg-2 control-label">事务类型 </label>
+                                      <div class="col-lg-6">
+                                      <select class="form-control m-bot15" id="issue_type" name="type">
+                                              <option value="35">忘记密码</option>
+                                              <option value="36">离职申请</option>
+                                              <option value="37">错误反馈</option>
+                                              <option value="38">信息变更</option>
+                                              <option value="39">其他</option>
+                                              <option value="70">病假申请</option>
+                                          </select>
+										 </div>
+									  </div>
+									  <div class="form-group ">
+                                          <label class="control-label col-lg-2">主题 </label>
+                                          <div class="col-lg-6">
+                                              <input class="form-control" id="csubject" name="subject" minlength="3" type="text" required />
+                                          </div>
+                                      </div>
+									  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">联系电话 </label>
+                                                      <div class="col-lg-6">
+                                                          <input type="tel" class="form-control" id="phone" name="phone" maxlength="11">
+                                                      </div>
+                                                  </div>
+									<div class="form-group">
+                                                      <label class="col-lg-2 control-label">正文 </label>
+                                                  <div class="col-lg-6">
+                                                      <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+													 </div>
+													 </div>
+
+                                      <div class="form-group">
+                                          <div class="col-lg-offset-4 col-lg-6">
+                                              <button class="btn btn-primary" type="submit">处理</button>
+                                              <button class="btn btn-default" type="button">取消</button>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+
+                          </div>
+                      </section>
+                  </div>
+              </div>
+  </section>
+  <!-- container section end -->
+
+    <!-- javascripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- jquery validate js -->
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	
+	<script type="text/javascript" src="assets/ckeditor/ckeditor.js"></script>
+
+    <!-- custom form validation script for this page-->
+    <!--<script src="js/form-validation-script.js"></script>-->
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+  <script>
+
+  </script>
+
+  </body>
+</html>

@@ -77,19 +77,19 @@
                               <ul class="nav nav-tabs">
                                   <li class="active">
                                       <a data-toggle="tab" href="#profile">
-                                          <i class="icon-desktop"></i>
+                                          <i class="icon_desktop"></i>
                                           部门资料
                                       </a>
                                   </li>
 								  <li>
                                       <a data-toggle="tab" href="#emplist">
-                                          <i class="icon-user"></i>
+                                          <i class="icon_profile"></i>
                                           员工列表
                                       </a>
                                   </li>
 								  <li>
                                       <a data-toggle="tab" href="#edit-profile">
-                                          <i class="icon-envelope"></i>
+                                          <i class="icon_documents_alt"></i>
                                           编辑部门资料
                                       </a>
                                   </li>
@@ -102,7 +102,7 @@
                                           <div class="panel-body bio-graph-info">
                                               <div class="row">
                                                   <div class="bio-row">
-                                                      <p><span>部门ID</span>: <span id="para1">3015216117</span></p>
+                                                      <p><span>部门ID</span>: <span id="para1">004</span></p>
                                                   </div>
                                                   <div class="bio-row">
                                                       <p><span>部门名称</span>: <span id="para1">董事会</span></p>
@@ -173,64 +173,45 @@
                                               <h1> Profile Info</h1>
                                               <form class="form-horizontal" role="form">                                                  
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">First Name</label>
+                                                      <label class="col-lg-2 control-label">部门名称</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="f-name" placeholder=" ">
+                                                          <input type="text" class="form-control" id="fullname" placeholder=" ">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Last Name</label>
+                                                      <label class="col-lg-2 control-label">部门经理ID</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="l-name" placeholder=" ">
+                                                          <input type="number" class="form-control" id="mgr" placeholder=" " maxlength="10">
                                                       </div>
                                                   </div>
-                                                  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">About Me</label>
-                                                      <div class="col-lg-10">
-                                                          <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Country</label>
+												  <div class="form-group">
+                                                      <label class="col-lg-2 control-label">部门地址</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="c-name" placeholder=" ">
+                                                          <input type="text" class="form-control" id="addr" placeholder=" ">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Birthday</label>
+                                                      <label class="col-lg-2 control-label">部门信息</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="b-day" placeholder=" ">
+                                                          <textarea name="" id="info" class="form-control" cols="30" rows="5"></textarea>
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Occupation</label>
+                                                      <label class="col-lg-2 control-label">部门电话</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="occupation" placeholder=" ">
+                                                          <input type="tel" class="form-control" id="phone" placeholder=" " maxlength="11">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Email</label>
+                                                      <label class="col-lg-2 control-label">上级部门ID</label>
                                                       <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="email" placeholder=" ">
+                                                          <input type="number" class="form-control" id="parent" placeholder=" " maxlength="4">
                                                       </div>
                                                   </div>
                                                   <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Mobile</label>
-                                                      <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="mobile" placeholder=" ">
-                                                      </div>
-                                                  </div>
-                                                  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">Website URL</label>
-                                                      <div class="col-lg-6">
-                                                          <input type="text" class="form-control" id="url" placeholder="http://www.demowebsite.com ">
-                                                      </div>
-                                                  </div>
-
-                                                  <div class="form-group">
-                                                      <div class="col-lg-offset-2 col-lg-10">
-                                                          <button type="submit" class="btn btn-primary">Save</button>
-                                                          <button type="button" class="btn btn-danger">Cancel</button>
+                                                      <div class="col-lg-offset-4 col-lg-10">
+                                                          <button type="submit" class="btn btn-primary">保存</button>
+                                                          <button type="button" class="btn btn-danger">取消</button>
                                                       </div>
                                                   </div>
                                               </form>
