@@ -10,7 +10,6 @@ function getUserName() {
         }
     });
 }
-
 function getUserInfo() {
     query = window.location.search.substring(0);
     $.ajax({
@@ -22,6 +21,39 @@ function getUserInfo() {
         error: function () {
             alert("连接超时！")
         }
+    });
+}
+function getDepList() {
+    $.ajax({
+        url: '/dep/list',
+        type: 'GET',
+        success: function (res) {
+            addDepList(res)
+        },
+        error: function () {
+            alert("连接超时！")
+        }
+    });
+}
+function getDepInfoFromUrl() {
+    let info = getUrlPara('info');
+    info = $.base64.decode(info);
+}
+
+function addDepList(list) {
+    $.each(list, function(i, item){
+        let content = '';
+        let base64 = $.base64.encode(item);
+        if(item["parentName"] ==="null")
+            item["parentName"] = "无";
+        content += '<td>'+item["depId"]+'</td>';
+        content += '<td>'+item["depName"]+'</td>';
+        content += '<td>'+item["mgrName"]+'</td>';
+        content += '<td>'+item["addr"]+'</td>';
+        content += '<td>'+item["phoneNumber"]+'</td>';
+        content += '<td>'+item["parentName"]+'</td>';
+        content += '<td><a class="btn-group btn btn-primary" href="/dep_info.html?info=' + base64 + '"><i class="icon_documents_alt"></i> 详细信息</a></td>';
+        $("#list").append($("<tr></tr>").html(content));
     });
 }
 function addUserInfo(user){
@@ -38,4 +70,10 @@ function addUserInfo(user){
     $(".para9").text(user["birthday"]);
     $(".para10").text(user["healthValue"]);
     $(".para11").text(user["registerTime"]);
+}
+
+function getUrlPara(name) {
+    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+    var r = window.location.search.substr(1).match(reg);
+    if (r != null) return unescape(r[2]); return null;
 }

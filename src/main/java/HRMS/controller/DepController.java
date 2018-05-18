@@ -22,7 +22,7 @@ public class DepController {
 
     @GetMapping(value = "/list")
     public List<DepartmentView> getAll(){
-        List<DepartmentView> all = departmentViewRepository.findAll();
+        return departmentViewRepository.findAll();
     }
 /*    @GetMapping(value = "/info")
     public Department getUserInfo(@RequestParam(value = "id") Long id){

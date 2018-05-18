@@ -9,11 +9,11 @@ import javax.persistence.Table;
 
 @Entity
 @Immutable
-@Table(name = "view_emp_info")
+@Table(name = "view_dep_info")
 public class DepartmentView {
     @Id
     @Column(name= "dep_id")
-    private Integer depId;
+    private int depId;
 
     @Column(name= "dep_name")
     private String depName;

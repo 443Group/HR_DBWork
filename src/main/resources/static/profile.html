@@ -83,8 +83,14 @@
                               <ul class="nav nav-tabs">
                                   <li class="active">
                                       <a data-toggle="tab" href="#profile">
-                                          <i class="icon-user"></i>
+                                          <i class="icon_profile"></i>
                                           个人资料
+                                      </a>
+                                  </li>
+								  <li>
+                                      <a data-toggle="tab" href="#salary">
+                                          <i class="icon_genius"></i>
+                                          薪资情况
                                       </a>
                                   </li>
                               </ul>
@@ -136,6 +142,36 @@
                                           </div>
                                       </section>
                                   </div>
+								    <div id="salary" class="tab-pane">
+                                      <section class="panel">
+                                          <div class="panel-body bio-graph-info">
+                                              <div class="row">
+                                                  <div class="bio-row">
+                                                      <p><span>员工ID</span>: <span class="para para1"></span></p>
+                                                  </div>
+                                                  <div class="bio-row">
+                                                      <p><span>姓名</span>: <span class="para para2"></span></p>
+                                                  </div>
+                                                  <div class="bio-row">
+                                                      <p><span>所在职位</span>: <span class="para para3"></span></p>
+                                                  </div>
+                                                  <div class="bio-row">
+                                                      <p><span>岗位月薪</span>: <span class="para para4"></span></p>
+                                                  </div>
+                                                  <div class="bio-row">
+                                                      <p><span>本年奖金</span>: <span class="para para5"></span></p>
+                                                  </div>
+                                                  <div class="bio-row">
+                                                      <p><span>本年总薪资</span>: <span class="para para6"></span></p>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </section>
+                                      <section>
+                                          <div class="row">
+                                          </div>
+                                      </section>
+                                  </div>
                                   </div>
                               </div>
                       </section>
@@ -156,8 +192,12 @@
     <!--custome script for all page-->
     <script src="js/scripts.js"></script>
 
-    <script src="js/ajax/userInfo.js"></script>
-
+    <script src="js/ajax.js"></script>
+  <script>
+      $().ready(function (){
+          getUserInfo();
+      });
+  </script>
   <script>
 
       //knob
