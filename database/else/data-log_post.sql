@@ -1,0 +1,1 @@
+INSERT INTO HRAS.log_post SET emp_id=3015216117, post_type=66, to_dep_id=1, to_post_id=1, applicant_id=3015216117, reviewer_id=3015216117;

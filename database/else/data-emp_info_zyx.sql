@@ -1,0 +1,1 @@
+INSERT INTO HRAS.emp_info SET id=3015216117, name='张一祥', password='6642434023d781dd4dab11e49864deda', email='592005261@qq.com', phone_number='15822397501', birthday='1997-07-20 00:00:00', political=19, health=2;

@@ -1,0 +1,652 @@
+<sql db="mysql">
+<datatypes db="mysql">
+<type label="TINYINT" length="0" sql="TINYINT" quote=""/>
+<type label="SMALLINT" length="0" sql="SMALLINT" quote=""/>
+<type label="MEDIUMINT" length="0" sql="MEDIUMINT" quote=""/>
+<type label="INT" length="0" sql="INT" quote=""/>
+<type label="BIGINT" length="0" sql="BIGINT" quote=""/>
+<type label="INTEGER" length="0" sql="INTEGER" quote=""/>
+<type label="FLOAT" length="0" sql="FLOAT" quote=""/>
+<type label="REAL" length="0" sql="REAL" quote=""/>
+<type label="DOUBLE" length="0" sql="DOUBLE" quote=""/>
+<type label="BIT" length="0" sql="BIT" quote=""/>
+<type label="SERIAL" length="0" sql="SERIAL" quote=""/>
+<type label="BOOLEAN" length="0" sql="BOOLEAN" quote=""/>
+<type label="BOOL" length="0" sql="BOOL" quote=""/>
+<type label="DATE" length="0" sql="DATE" quote=""/>
+<type label="DATETIME" length="0" sql="DATETIME" quote=""/>
+<type label="TIMESTAMP" length="0" sql="TIMESTAMP" quote=""/>
+<type label="TIME" length="0" sql="TIME" quote=""/>
+<type label="YEAR" length="0" sql="YEAR" quote=""/>
+<type label="CHAR" length="0" sql="CHAR" quote=""/>
+<type label="VARCHAR" length="0" sql="VARCHAR" quote=""/>
+<type label="TINYTEXT" length="0" sql="TINYTEXT" quote=""/>
+<type label="MEDIUMTEXT" length="0" sql="MEDIUMTEXT" quote=""/>
+<type label="LONGTEXT" length="0" sql="LONGTEXT" quote=""/>
+<type label="BINARY" length="0" sql="BINARY" quote=""/>
+<type label="VARBINARY" length="0" sql="VARBINARY" quote=""/>
+<type label="TINYBLOB" length="0" sql="TINYBLOB" quote=""/>
+<type label="BLOB" length="0" sql="BLOB" quote=""/>
+<type label="MEDIUMBLOB" length="0" sql="MEDIUMBLOB" quote=""/>
+<type label="LONGBLOB" length="0" sql="LONGBLOB" quote=""/>
+<type label="ENUM" length="0" sql="ENUM" quote=""/>
+<type label="SET" length="0" sql="SET" quote=""/>
+<type label="LINESTRING" length="0" sql="LINESTRING" quote=""/>
+<type label="POLYGON" length="0" sql="POLYGON" quote=""/>
+<type label="GEOMETRY" length="0" sql="GEOMETRY" quote=""/>
+<type label="MULTIPOINT" length="0" sql="MULTIPOINT" quote=""/>
+<type label="MULTILINESTRING" length="0" sql="MULTILINESTRING" quote=""/>
+<type label="MULTIPOLYGON" length="0" sql="MULTIPOLYGON" quote=""/>
+<type label="GEOMETRYCOLLECTION" length="0" sql="GEOMETRYCOLLECTION" quote=""/>
+</datatypes>
+<table name="admin_info">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#31649;&#29702;&#21592;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#31649;&#29702;&#21592;&#21592;&#24037;ID]]></comment><relation table="emp_info" row="id"/></row>
+<key name="emp_id_UNIQUE" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="com_department">
+<row name="id" namevalue="id" null="0" datatypename="int(4) unsigned zerofill" autoincrement="1">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#37096;&#38376;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(40)" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+<default/>
+<comment><![CDATA[&#37096;&#38376;&#21517;]]></comment></row>
+<row name="addr" namevalue="addr" null="0" datatypename="varchar(50)" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default/>
+<comment><![CDATA[&#37096;&#38376;&#22320;&#22336;]]></comment></row>
+<row name="info" namevalue="info" null="0" datatypename="varchar(100)" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>无</default>
+<comment><![CDATA[&#37096;&#38376;&#20449;&#24687;]]></comment></row>
+<row name="mgr" namevalue="mgr" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#37096;&#38376;&#32463;&#29702;(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="phone_number" namevalue="phone_number" null="0" datatypename="varchar(11)" autoincrement="0">
+<datatype>VARCHAR(11)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="parent_dep" namevalue="parent_dep" null="0" datatypename="int(4) unsigned zerofill" autoincrement="0">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><relation table="com_department" row="id"/></row>
+<key name="dep_dep_idx" type="UNIQUE">
+<part>parent_dep</part>
+</key>
+<key name="Dep_name_UNIQUE" type="UNIQUE">
+<part>name</part>
+</key>
+<key name="mgr_idx" type="UNIQUE">
+<part>mgr</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="com_plan">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#25307;&#32856;&#35745;&#21010;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="status" namevalue="status" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#25307;&#32856;&#35745;&#21010;&#29366;&#24577;]]></comment><relation table="dict_info" row="id"/></row>
+<row name="post_id" namevalue="post_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;ID(&#22806;&#38190;)]]></comment><relation table="com_post" row="id"/></row>
+<row name="dep_id" namevalue="dep_id" null="0" datatypename="int(4) unsigned zerofill" autoincrement="0">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#37096;&#38376;ID(&#22806;&#38190;)]]></comment><relation table="com_department" row="id"/></row>
+<row name="expect_num" namevalue="expect_num" null="0" datatypename="int(10) unsigned" autoincrement="0">
+<datatype>INT(10) UNSIGNED</datatype>
+<default/>
+<comment><![CDATA[&#38656;&#27714;&#37327;]]></comment></row>
+<row name="finished_num" namevalue="finished_num" null="0" datatypename="int(10) unsigned" autoincrement="0">
+<datatype>INT(10) UNSIGNED</datatype>
+<default>0</default>
+<comment><![CDATA[&#24050;&#23436;&#25104;&#25968;&#37327;]]></comment></row>
+<row name="time_start" namevalue="time_start" null="0" datatypename="date" autoincrement="0">
+<datatype>DATE</datatype>
+<default/>
+<comment><![CDATA[&#24320;&#22987;&#26102;&#38388;]]></comment></row>
+<row name="time_end" namevalue="time_end" null="0" datatypename="date" autoincrement="0">
+<datatype>DATE</datatype>
+<default/>
+<comment><![CDATA[&#32467;&#26463;&#26102;&#38388;]]></comment></row>
+<row name="time_create" namevalue="time_create" null="0" datatypename="timestamp" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default>
+<comment><![CDATA[&#21019;&#24314;&#26102;&#38388;]]></comment></row>
+<row name="creator_id" namevalue="creator_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#21019;&#24314;&#20154;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="host_id" namevalue="host_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#36127;&#36131;&#20154;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<key name="plan_dep_idx" type="UNIQUE">
+<part>dep_id</part>
+</key>
+<key name="plan_dict_idx" type="UNIQUE">
+<part>status</part>
+</key>
+<key name="plan_emp_idx" type="UNIQUE">
+<part>creator_id</part>
+</key>
+<key name="plan_host_idx" type="UNIQUE">
+<part>host_id</part>
+</key>
+<key name="plan_post_idx" type="UNIQUE">
+<part>post_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="com_post">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(40)" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;&#21517;]]></comment></row>
+<row name="level" namevalue="level" null="0" datatypename="int(3)" autoincrement="0">
+<datatype>INT(3)</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;&#32423;&#21035;]]></comment></row>
+<row name="post_salary" namevalue="post_salary" null="0" datatypename="int(11)" autoincrement="0">
+<datatype>INT(11)</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;&#34218;&#36164;]]></comment></row>
+<row name="type" namevalue="type" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;&#31867;&#22411;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<key name="name_UNIQUE" type="UNIQUE">
+<part>name</part>
+</key>
+<key name="post_dict_idx" type="UNIQUE">
+<part>type</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="com_posting">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#22312;&#32844;&#32534;&#21495;]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#21592;&#24037;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="dep_id" namevalue="dep_id" null="0" datatypename="int(4) unsigned zerofill" autoincrement="0">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><relation table="com_department" row="id"/></row>
+<row name="post_id" namevalue="post_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23703;&#20301;ID(&#22806;&#38190;)]]></comment><relation table="com_post" row="id"/></row>
+<row name="status" namevalue="status" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#22312;&#32844;&#29366;&#24577;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<key name="posting_dep_idx" type="UNIQUE">
+<part>dep_id</part>
+</key>
+<key name="posting_dict_idx" type="UNIQUE">
+<part>status</part>
+</key>
+<key name="posting_emp" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="posting_post_idx" type="UNIQUE">
+<part>post_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="dict_info">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23383;&#20856;&#39033;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="dict_code" namevalue="dict_code" null="0" datatypename="varchar(20)" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default/>
+<comment><![CDATA[&#26597;&#35810;&#30721;]]></comment></row>
+<row name="value" namevalue="value" null="0" datatypename="varchar(50)" autoincrement="0">
+<datatype>VARCHAR(50)</datatype>
+<default/>
+<comment><![CDATA[&#23383;&#20856;&#39033;&#20540;]]></comment></row>
+<row name="type_id" namevalue="type_id" null="0" datatypename="int(5) unsigned zerofill" autoincrement="0">
+<datatype>INT(5) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#25152;&#23646;&#23383;&#20856;&#31867;&#22411;ID(&#22806;&#38190;)]]></comment><relation table="dict_type" row="id"/></row>
+<key name="dict_code_UNIQUE" type="UNIQUE">
+<part>dict_code</part>
+</key>
+<key name="dict_type_idx" type="UNIQUE">
+<part>type_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="dict_type">
+<row name="id" namevalue="id" null="0" datatypename="int(5) unsigned zerofill" autoincrement="1">
+<datatype>INT(5) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23383;&#20856;&#31867;&#22411;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(40)" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+<default/>
+<comment><![CDATA[&#31867;&#22411;&#21517;]]></comment></row>
+<row name="parent_id" namevalue="parent_id" null="0" datatypename="int(5) unsigned zerofill" autoincrement="0">
+<datatype>INT(5) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#29238;&#23383;&#20856;&#31867;&#22411;ID(&#22806;&#38190;)]]></comment><relation table="dict_type" row="id"/></row>
+<key name="name_UNIQUE" type="UNIQUE">
+<part>name</part>
+</key>
+<key name="parent_id_idx" type="UNIQUE">
+<part>parent_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="emp_info">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#21592;&#24037;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="password" namevalue="password" null="0" datatypename="char(60)" autoincrement="0">
+<datatype>CHAR(60)</datatype>
+<default/>
+<comment><![CDATA[&#29992;&#25143;&#23494;&#30721;]]></comment></row>
+<row name="email" namevalue="email" null="0" datatypename="varchar(30)" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default/>
+<comment><![CDATA[&#27880;&#20876;email]]></comment></row>
+<row name="phone_number" namevalue="phone_number" null="0" datatypename="char(11)" autoincrement="0">
+<datatype>CHAR(11)</datatype>
+<default/>
+<comment><![CDATA[&#30005;&#35805;&#21495;&#30721;]]></comment></row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(20)" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default/>
+<comment><![CDATA[&#21592;&#24037;&#22995;&#21517;]]></comment></row>
+<row name="birthday" namevalue="birthday" null="0" datatypename="date" autoincrement="0">
+<datatype>DATE</datatype>
+<default/>
+<comment><![CDATA[&#29983;&#26085;]]></comment></row>
+<row name="time_register" namevalue="time_register" null="0" datatypename="timestamp" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default>
+<comment><![CDATA[&#27880;&#20876;&#26102;&#38388;]]></comment></row>
+<row name="political" namevalue="political" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#25919;&#27835;&#38754;&#35980;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<row name="health" namevalue="health" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#20581;&#24247;&#29366;&#20917;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<row name="title" namevalue="title" null="0" datatypename="int(5) unsigned zerofill" autoincrement="0">
+<datatype>INT(5) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#32844;&#31216;(&#22806;&#38190;)]]></comment><relation table="emp_title" row="id"/></row>
+<row name="bonus" namevalue="bonus" null="0" datatypename="int(10)" autoincrement="0">
+<datatype>INT(10)</datatype>
+<default>0</default>
+<comment><![CDATA[&#22870;&#37329;]]></comment></row>
+<key name="email_UNIQUE" type="UNIQUE">
+<part>email</part>
+</key>
+<key name="emp_dict_health_idx" type="UNIQUE">
+<part>health</part>
+</key>
+<key name="emp_dict_idx" type="UNIQUE">
+<part>political</part>
+</key>
+<key name="emp_title_idx" type="UNIQUE">
+<part>title</part>
+</key>
+<key name="phone_number_UNIQUE" type="UNIQUE">
+<part>phone_number</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="emp_title">
+<row name="id" namevalue="id" null="0" datatypename="int(5) unsigned zerofill" autoincrement="1">
+<datatype>INT(5) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#32844;&#31216;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(10)" autoincrement="0">
+<datatype>VARCHAR(10)</datatype>
+<default/>
+<comment><![CDATA[&#32844;&#31216;&#21517;]]></comment></row>
+<row name="level" namevalue="level" null="0" datatypename="int(11)" autoincrement="0">
+<datatype>INT(11)</datatype>
+<default/>
+<comment><![CDATA[&#32844;&#31216;&#32423;&#21035;]]></comment></row>
+<key name="name_UNIQUE" type="UNIQUE">
+<part>name</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="log_attendence">
+<row name="id" namevalue="id" null="0" datatypename="int(15) unsigned zerofill" autoincrement="1">
+<datatype>INT(15) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#20986;&#21220;&#35760;&#24405;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="date" namevalue="date" null="0" datatypename="timestamp" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default>
+<comment><![CDATA[&#32771;&#21220;&#26102;&#38388;]]></comment></row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#32771;&#21220;&#21592;&#24037;]]></comment><relation table="emp_info" row="id"/></row>
+<row name="type" namevalue="type" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#32771;&#21220;&#31867;&#22411;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<row name="ip" namevalue="ip" null="0" datatypename="varchar(30)" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="value" namevalue="value" null="0" datatypename="int(11)" autoincrement="0">
+<datatype>INT(11)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<key name="attendece_type_idx" type="UNIQUE">
+<part>type</part>
+</key>
+<key name="attendence_emp_idx" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="log_issue">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#21592;&#24037;ID]]></comment><relation table="emp_info" row="id"/></row>
+<row name="type" namevalue="type" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><relation table="dict_info" row="id"/></row>
+<row name="subject" namevalue="subject" null="0" datatypename="varchar(40)" autoincrement="0">
+<datatype>VARCHAR(40)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="name" namevalue="name" null="0" datatypename="varchar(20)" autoincrement="0">
+<datatype>VARCHAR(20)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="contact" namevalue="contact" null="0" datatypename="varchar(11)" autoincrement="0">
+<datatype>VARCHAR(11)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="content" namevalue="content" null="0" datatypename="varchar(140)" autoincrement="0">
+<datatype>VARCHAR(140)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<row name="status" namevalue="status" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><relation table="dict_info" row="id"/></row>
+<row name="processor_id" namevalue="processor_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[--]]></comment><relation table="emp_info" row="id"/></row>
+<row name="time_submit" namevalue="time_submit" null="0" datatypename="timestamp" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default>
+<comment><![CDATA[--]]></comment></row>
+<row name="emp_id_id" namevalue="emp_id_id" null="0" datatypename="bigint(20)" autoincrement="0">
+<datatype>BIGINT(20)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<key name="issue_dict_idx" type="UNIQUE">
+<part>type</part>
+</key>
+<key name="issue_dict_status_idx" type="UNIQUE">
+<part>status</part>
+</key>
+<key name="issue_emp_idx" type="UNIQUE">
+<part>processor_id</part>
+</key>
+<key name="issue_emp_id_idx" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="log_login">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#30331;&#24405;&#35760;&#24405;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#30331;&#24405;&#21592;&#24037;ID]]></comment><relation table="emp_info" row="id"/></row>
+<row name="ip" namevalue="ip" null="0" datatypename="varchar(30)" autoincrement="0">
+<datatype>VARCHAR(30)</datatype>
+<default/>
+<comment><![CDATA[&#30331;&#24405;IP]]></comment></row>
+<row name="login_time" namevalue="login_time" null="0" datatypename="time" autoincrement="0">
+<datatype>TIME</datatype>
+<default/>
+<comment><![CDATA[&#30331;&#24405;&#26102;&#38388;]]></comment></row>
+<row name="logout_time" namevalue="logout_time" null="0" datatypename="time" autoincrement="0">
+<datatype>TIME</datatype>
+<default/>
+<comment><![CDATA[&#26029;&#24320;&#26102;&#38388;]]></comment></row>
+<row name="is_admin" namevalue="is_admin" null="0" datatypename="tinyint(4)" autoincrement="0">
+<datatype>TINYINT(4)</datatype>
+<default/>
+<comment><![CDATA[--]]></comment></row>
+<key name="login_emp_idx" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+<table name="log_post">
+<row name="id" namevalue="id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="1">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#20219;&#32844;&#35760;&#24405;ID]]></comment><key name="PRI" type="PRIMARY">
+<part>id</part>
+</key>
+</row>
+<row name="emp_id" namevalue="emp_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#21592;&#24037;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="post_type" namevalue="post_type" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#20219;&#32844;&#31867;&#22411;(&#23383;&#20856;)]]></comment><relation table="dict_info" row="id"/></row>
+<row name="from_dep_id" namevalue="from_dep_id" null="0" datatypename="int(4) unsigned zerofill" autoincrement="0">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#35843;&#31163;&#37096;&#38376;ID(&#22806;&#38190;)]]></comment><relation table="com_department" row="id"/></row>
+<row name="to_dep_id" namevalue="to_dep_id" null="0" datatypename="int(4) unsigned zerofill" autoincrement="0">
+<datatype>INT(4) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#35843;&#20219;&#37096;&#38376;(&#22806;&#38190;)]]></comment><relation table="com_department" row="id"/></row>
+<row name="from_post_id" namevalue="from_post_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#35843;&#31163;&#23703;&#20301;ID(&#22806;&#38190;)]]></comment><relation table="com_post" row="id"/></row>
+<row name="to_post_id" namevalue="to_post_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#35843;&#20219;&#23703;&#20301;ID(&#22806;&#38190;)]]></comment><relation table="com_post" row="id"/></row>
+<row name="applicant_id" namevalue="applicant_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#30003;&#35831;&#20154;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="reviewer_id" namevalue="reviewer_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#23457;&#26680;&#20154;ID(&#22806;&#38190;)]]></comment><relation table="emp_info" row="id"/></row>
+<row name="plan_id" namevalue="plan_id" null="0" datatypename="int(10) unsigned zerofill" autoincrement="0">
+<datatype>INT(10) UNSIGNED ZEROFILL</datatype>
+<default/>
+<comment><![CDATA[&#25152;&#23646;&#25307;&#32856;&#35745;&#21010;ID(&#22806;&#38190;)]]></comment><relation table="com_plan" row="id"/></row>
+<row name="post_time" namevalue="post_time" null="0" datatypename="timestamp" autoincrement="0">
+<datatype>TIMESTAMP</datatype>
+<default>CURRENT_TIMESTAMP</default>
+<comment><![CDATA[&#21464;&#21160;&#26102;&#38388;]]></comment></row>
+<row name="post_info" namevalue="post_info" null="0" datatypename="varchar(100)" autoincrement="0">
+<datatype>VARCHAR(100)</datatype>
+<default>无</default>
+<comment><![CDATA[&#21464;&#21160;&#20449;&#24687;]]></comment></row>
+<key name="log_post_aplicant_idx" type="UNIQUE">
+<part>applicant_id</part>
+</key>
+<key name="log_post_dep_idx" type="UNIQUE">
+<part>from_dep_id</part>
+</key>
+<key name="log_post_dep_to_idx" type="UNIQUE">
+<part>to_dep_id</part>
+</key>
+<key name="log_post_emp_idx" type="UNIQUE">
+<part>emp_id</part>
+</key>
+<key name="log_post_plan_idx" type="UNIQUE">
+<part>plan_id</part>
+</key>
+<key name="log_post_post_idx" type="UNIQUE">
+<part>from_post_id</part>
+</key>
+<key name="log_post_post_to_idx" type="UNIQUE">
+<part>to_post_id</part>
+</key>
+<key name="log_post_reviewer_idx" type="UNIQUE">
+<part>reviewer_id</part>
+</key>
+<key name="log_post_type_idx" type="UNIQUE">
+<part>post_type</part>
+</key>
+<key name="PRIMARY" type="UNIQUE">
+<part>id</part>
+</key>
+<key name="PRIMARY" type="PRIMARY">
+<part>id</part>
+</key>
+</table>
+</sql>

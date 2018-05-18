@@ -1,0 +1,14 @@
+INSERT INTO HRAS.com_department SET name='董事会', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='人力资源部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='技术开发部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='市场营销部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='审计部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='法律事务部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='财政部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='总经理办公室', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='总务后勤部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='行政管理部', addr='天津', mgr=3015216117, phone_number='15822397501';
+INSERT INTO HRAS.com_department SET name='移动开发部', addr='天津', mgr=3015216117, phone_number='15822397501', parent_dep=3;
+INSERT INTO HRAS.com_department SET name='大数据研发部', addr='天津', mgr=3015216117, phone_number='15822397501', parent_dep=3;
+INSERT INTO HRAS.com_department SET name='人工智能研发部', addr='天津', mgr=3015216117, phone_number='15822397501', parent_dep=3;
+INSERT INTO HRAS.com_department SET name='应用软件开发部', addr='天津', mgr=3015216117, phone_number='15822397501', parent_dep=3;

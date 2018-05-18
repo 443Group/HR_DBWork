@@ -1,0 +1,1 @@
+INSERT INTO HRAS.admin_info SET emp_id= 3015216117, admin_password='6642434023d781dd4dab11e49864deda';
