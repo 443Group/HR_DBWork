@@ -40,7 +40,7 @@
                   		<div class="col-md-2 col-sm-2 col-md-offset-1 box0">
                   			<div class="box1">
 					  			<span class="li_user"></span>
-					  			<h3><a href="profile.html">我的资料</a></h3>
+					  			<h3><a href="profile_admin.html">我的资料</a></h3>
                   			</div>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
@@ -52,19 +52,19 @@
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_news"></span>
-					  			<h3><a href="dep_list.html">部门列表</a></h3>
+					  			<h3><a href="dep_list_admin.html">部门列表</a></h3>
                   			</div>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_calendar"></span>
-					  			<h3><a href="attendence_info.html">考勤信息</a></h3>
+					  			<h3><a href="attendence_info_admin.html">考勤信息</a></h3>
                   			</div>
                   		</div>
                   		<div class="col-md-2 col-sm-2 box0">
                   			<div class="box1">
 					  			<span class="li_pen"></span>
-					  			<h3><a href="#" onclick="sign()" id="sign">签到</a></h3>
+					  			<h3><a href="#">签到</a></h3>
                   			</div>
 
                   		</div>
@@ -196,21 +196,6 @@
 	
 	
 	<script type="application/javascript">
-		function sign(){
-            $.ajax({
-                url: '/sign/sign',
-                type: 'GET',
-                success: function (res) {
-                    if(res === true){
-                        let sign =$("#sign");
-                        sign.text("已签到");
-                        sign.removeAttrs("onclick");
-                        sign.removeAttrs("href");
-                    }
-                },
-            })
-        }
-
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();

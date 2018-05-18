@@ -34,15 +34,6 @@ public class DepController {
     public Long getNumber(@RequestParam(value = "id") Long depId){
         return postingRepository.countByDepId(depId);
     }
-/*    @GetMapping(value = "/info")
-    public Department getUserInfo(@RequestParam(value = "id") Long id){
-        if(id != null){
-            System.out.println("ALOHA :"+id);
-            Optional<EmployeeView> employeeView = employeeViewRepository.findById(id);
-            return employeeView.orElseGet(EmployeeView::new);
-        }else {
-            Optional<EmployeeView> employeeView = employeeViewRepository.findById(Long.valueOf(principal.getName()));
-            return employeeView.orElseGet(EmployeeView::new);
-        }
-    }*/
+
+
 }

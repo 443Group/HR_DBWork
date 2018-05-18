@@ -43,13 +43,13 @@ function getDepInfoFromUrl() {
     info = JSON.parse(info);
 
     $.ajax({
-        url: '/dep/number'+info["depId"],
+        url: '/dep/number?id='+info["depId"],
         type: 'GET',
         success: function (num) {
             $(".para8").text(num);
         },
         error: function () {
-            alert("连接超时！")
+
         }
     });
 
@@ -62,8 +62,30 @@ function getDepInfoFromUrl() {
     $(".para5").text(info["phoneNumber"]);
     $(".para6").text(info["parentName"]);
     $(".para7").text(info["info"]);
-}
 
+    getUserList(info["depName"]);
+}
+function getUserList(depName){
+    $.ajax({
+        url: '/user/list?depName='+depName,
+        type: 'GET',
+        success: function (res) {
+            $.each(res, function(i, item){
+                let content = '';
+                content += '<td>'+item["employeeId"]+'</td>';
+                content += '<td>'+item["employeeName"]+'</td>';
+                content += '<td>'+item["postName"]+'</td>';
+                content += '<td>'+item["phoneNumber"]+'</td>';
+                content += '<td>'+item["healthValue"]+'</td>';
+                content += '<td><a class="btn-group btn btn-primary" href="/profile.html?id=' + item["employeeId"] + '"><i class="icon_documents_alt"></i> 详细信息</a></td>';
+                $("#list").append($("<tr></tr>").html(content));
+            });
+        },
+        error: function () {
+            alert("连接超时！")
+        }
+    });
+}
 function addDepList(list) {
     $.each(list, function(i, item){
         // alert(JSON.stringify(item));
@@ -84,6 +106,19 @@ function addDepList(list) {
     });
 }
 function addUserInfo(user){
+    $.ajax({
+        url: '/user/salary?id='+user["employeeId"],
+        type: 'GET',
+        success: function (salary) {
+            $(".param1").text(salary["monthlySalary"]+"元");
+            $(".param2").text(salary["annualBonus"]+"元");
+            $(".param3").text((salary["monthlySalary"] *12+salary["annualBonus"]*1).toString()+"元");
+        },
+        error: function () {
+
+        }
+    });
+
     user["registerTime"] = user["registerTime"].replace("T","  ");
 
     $(".para1").text(user["employeeId"]);
@@ -97,6 +132,8 @@ function addUserInfo(user){
     $(".para9").text(user["birthday"]);
     $(".para10").text(user["healthValue"]);
     $(".para11").text(user["registerTime"]);
+
+
 }
 
 function getUrlPara(name) {
