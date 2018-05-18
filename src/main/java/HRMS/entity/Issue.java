@@ -10,13 +10,18 @@ public class Issue {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "emp_id")
+    private Long empId;
+
     private Integer type;
 
-    private String subjet;
+    private String subject;
 
     private String name;
 
     private String contact;
+
+    private String content;
 
     private Integer status;
 
@@ -25,6 +30,22 @@ public class Issue {
 
     @Column(name = "time_submit")
     private LocalDateTime submitTime;
+
+    public Long getEmpId() {
+        return empId;
+    }
+
+    public void setEmpId(Long empId) {
+        this.empId = empId;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Integer getId() {
         return id;
@@ -42,12 +63,12 @@ public class Issue {
         this.type = type;
     }
 
-    public String getSubjet() {
-        return subjet;
+    public String getSubject() {
+        return subject;
     }
 
-    public void setSubjet(String subjet) {
-        this.subjet = subjet;
+    public void setSubject(String subject) {
+        this.subject = subject;
     }
 
     public String getName() {

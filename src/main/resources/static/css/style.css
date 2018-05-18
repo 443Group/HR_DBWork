@@ -39,7 +39,7 @@ table tr th { color: #688a7e;}
 }
 
 #container {
-    width: 100%;
+    width: 99%;
     height: 100%;
 }
 .copyrights{
@@ -54,7 +54,7 @@ table tr th { color: #688a7e;}
     position: fixed;
     bottom:0;
     z-index: 100000;
-    width: 100%;
+    width: 99%;
     overflow: hidden;
     height: 50px;
     margin:0px;
@@ -702,7 +702,7 @@ ul.sidebar-menu li.active a i {
     display: inline-block;
     margin-top: 60px;
     padding: 15px;
-    width: 100%;
+    width: 99%;
 }
 
 a.logo {
@@ -876,7 +876,7 @@ div[data-role="editor-toolbar"] {
 
 .dropdown-menu.extended li a {
     padding: 15px 10px !important;
-    width: 100%;
+    width: 99%;
     display: inline-block;
 }
 
@@ -954,7 +954,7 @@ div[data-role="editor-toolbar"] {
 .dropdown-menu.extended.logout > li {
     float: left;
     text-align: left;
-    width: 100%;
+    width: 99%;
 }
 .dropdown-menu.extended.logout > li.eborder-top {
     border-top: 2px solid #688a7e !important;    
@@ -962,7 +962,7 @@ div[data-role="editor-toolbar"] {
 .dropdown-menu.extended.logout > li:last-child {
     float: left;
     text-align: left;
-    width: 100%;
+    width: 99%;
     background: #688a7e;    
 }
 
@@ -984,7 +984,7 @@ div[data-role="editor-toolbar"] {
     font-size: 14px;
     list-style: none;
     padding: 15px 10px !important;
-    width: 100%;
+    width: 99%;
     display: inline-block;
 }
 
@@ -1645,7 +1645,7 @@ div[data-role="editor-toolbar"] {
   content: '+';
   display: block;
   position: absolute;
-  width: 100%;
+  width: 99%;
   text-align: center;
   text-indent: 0;
 }
@@ -1864,7 +1864,7 @@ div[data-role="editor-toolbar"] {
 * Google maps */
 
 .gmap iframe{
-	width: 100%;
+	width: 99%;
 	margin: 0px;
 	padding: 0px;
 }
@@ -1884,7 +1884,7 @@ div[data-role="editor-toolbar"] {
 	margin-right: 10px;
   padding: 10px 10px;
   text-shadow:0px 1px 0px #fff;
-  max-width: 100%;
+  max-width: 99%;
   text-align: center;
 }
 
@@ -2219,7 +2219,7 @@ div[data-role="editor-toolbar"] {
 }
 
 .chart-info {
-    width: 100%;
+    width: 99%;
     margin-bottom:5px;
 }
 
@@ -2249,7 +2249,7 @@ div[data-role="editor-toolbar"] {
     border-radius: 0px 0px 4px 4px;
     border: none;
     padding: 0;
-    width: 100%;
+    width: 99%;
     display: inline-block;
 }
 
@@ -2264,7 +2264,7 @@ div[data-role="editor-toolbar"] {
 .panel-footer.revenue-foot ul  {
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 99%;
     display: inline-flex;
 }
 
@@ -2287,7 +2287,7 @@ div[data-role="editor-toolbar"] {
 
 .panel-footer.revenue-foot ul li a{
     display: inline-block;
-    width: 100%;
+    width: 99%;
     padding: 14px 15px;
     text-align: center;
     border-right: 1px solid #d5d8df;
@@ -2376,14 +2376,14 @@ ul.ft-link li a i {
 
 #owl-slider .item img{
     display: block;
-    width: 100%;
+    width: 99%;
     height: auto;
 }
 
 .owl-buttons {
     position: absolute;
     top: 70px;
-    width: 100%;
+    width: 99%;
 
 }
 
@@ -2426,7 +2426,7 @@ ul.ft-link li a i {
     border-spacing: 0;
     display: table;
     table-layout: fixed;
-    width: 100%;
+    width: 99%;
 }
 .post-info {
     position: relative;
@@ -2634,7 +2634,7 @@ ul.ft-link li a i {
     display: inline-block;
     margin-bottom: 0px;
     margin-top: 10px;
-    width: 100%;
+    width: 99%;
     padding: 0px;
 }
 .profile-widget .twt-category ul li{
@@ -2861,12 +2861,12 @@ ul.ft-link li a i {
     padding:0;
     margin: 0;
     display: inline-block;
-    width: 100%;
+    width: 99%;
 }
 
 .weather-category ul   {
     display: inline-block;
-    width: 100%;
+    width: 99%;
 	padding-bottom: 10px;
     text-align: center;
 	border-top:1px solid #e6e6e6 ;
@@ -2904,7 +2904,7 @@ ul.ft-link li a i {
     padding:0;
     margin: 0;
     display: inline-block;
-    width: 100%;
+    width: 99%;
 }
 
 .weather-days ul li {
@@ -2982,7 +2982,7 @@ ul.ft-link li a i {
     padding:0;
     margin: 0;
     display: inline-block;
-    width: 100%;
+    width: 99%;
 }
 
 .weather-bg-img .weather-category ul li {
@@ -3042,7 +3042,7 @@ ul.ft-link li a i {
     border-spacing: 0;
     display: table;
     table-layout: fixed;
-    width: 100%;
+    width: 99%;
 }
 
 .inbox-wrapper aside {
@@ -3131,7 +3131,7 @@ a.mail-dropdown {
     background: #00a0df;
     padding: 12px 0;
     text-align: center;
-    width: 100%;
+    width: 99%;
     color: #fff;
 }
 .btn-compose:hover {
@@ -3140,7 +3140,7 @@ a.mail-dropdown {
 }
 ul.mail-nav  {
     display: inline-block;
-    width: 100%;
+    width: 99%;
     margin: 0;
     padding: 0;
 }
@@ -3153,14 +3153,14 @@ ul.mail-nav li {
     display: inline-block;
     line-height: 20px;
     padding: 10px;
-    width: 100%;
+    width: 99%;
     border-right: 1px solid #D7D7D7;
     border-bottom: 1px solid #D7D7D7;
 }
 
 ul.mail-nav li a  {
     color: #6a6a6a;     
-    width: 100%;
+    width: 99%;
     display: inline-block;
     padding: 0 20px;
 }
@@ -3189,7 +3189,7 @@ ul.mail-nav li a span.label {
 }
 ul.inbox-nav  {
     display: inline-block;
-    width: 100%;
+    width: 99%;
     margin: 0;
     padding: 0;
 }
@@ -3201,13 +3201,13 @@ ul.inbox-nav  {
 ul.inbox-nav li {
     display: inline-block;
     line-height: 45px;
-    width: 100%;
+    width: 99%;
 }
 
 ul.inbox-nav li a  {
     color: #6a6a6a;
     line-height: 45px;
-    width: 100%;
+    width: 99%;
     display: inline-block;
     padding: 0 20px;
 }
@@ -3332,7 +3332,7 @@ ul.inbox-pagination li {
 .mail-option {
     display: inline-block;
     margin-bottom: 0px;
-    width: 100%;
+    width: 99%;
     margin-top: 18px;
 }
 .open-mail-action i{
@@ -3681,7 +3681,7 @@ ul.inbox-pagination li {
 ul.summary-list {
     display: inline-block;
     padding-left:0 ;
-    width: 100%;
+    width: 99%;
     margin-bottom: 0;
 }
 
@@ -3712,13 +3712,13 @@ ul.summary-list > li:last-child  {
 }
 
 .activity {
-    width: 100%;
+    width: 99%;
     float: left;
     margin-bottom: 10px;
 }
 
 .activity.alt {
-    width: 100%;
+    width: 99%;
     float: right;
     margin-bottom: 10px;
 }
@@ -3941,7 +3941,7 @@ ul.amounts li {
 }
 
 .dataTables_filter label {
-    width: 100%;
+    width: 99%;
 }
 
 .dataTables_filter label input {
@@ -4000,7 +4000,7 @@ ul.amounts li {
 .tab-head {
     background: #688a7e;
     display: inline-block;
-    width: 100%;
+    width: 99%;
     margin-top: 60px;
 }
 
@@ -4536,7 +4536,7 @@ table.sliders tr td {
     text-align: right;
     text-decoration: none;
     top: 0;
-    width: 100%;
+    width: 99%;
     z-index: 2;
     display: none\9;
 }
@@ -4576,7 +4576,7 @@ table.sliders tr td {
 }
 .tags_clear {
     clear: both;
-    width: 100%;
+    width: 99%;
     height: 0px;
 }
 
@@ -4777,7 +4777,7 @@ table.sliders tr td {
 
 .user-heading.alt {
     display: inline-block;
-    width: 100%;
+    width: 99%;
     text-align: left;
 }
 
@@ -4843,13 +4843,13 @@ table.sliders tr td {
     display: inline-block;
     margin-bottom: 11px;
     margin-top: 55px;
-    width: 100%;
+    width: 99%;
 }
 .profile-widget-data{
     display: inline-block;
     margin-bottom: 10px;
     margin-top: 15px;
-    width: 100%;    
+    width: 99%;    
 }
 
 .twt-category ul li, .profile-widget-data ul li,.profile-nav ul > li{
