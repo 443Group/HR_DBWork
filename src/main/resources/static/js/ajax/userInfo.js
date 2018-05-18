@@ -1,7 +1,7 @@
 $().ready(function (){
-    query = window.location.search.substring(0)
+    query = window.location.search.substring(0);
     $.ajax({
-        url: '/user/name'+query,
+        url: '/user/info'+query,
         type: 'GET',
         success: function (res) {
             addUserInfo(res)
@@ -13,6 +13,8 @@ $().ready(function (){
 });
 
 function addUserInfo(user){
+    user["registerTime"] = user["registerTime"].replace("T","  ");
+
     $(".para1").text(user["employeeId"]);
     $(".para2").text(user["employeeName"]);
     $(".para3").text(user["postName"]);

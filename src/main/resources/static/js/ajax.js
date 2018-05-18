@@ -1,4 +1,17 @@
-$().ready(function (){
+function getUserName() {
+    $.ajax({
+        url: '/user/name',
+        type: 'GET',
+        success: function (res) {
+            $('.username').text(res);
+        },
+        error: function () {
+            $('.username').text('未获得用户名');
+        }
+    });
+}
+
+function getUserInfo() {
     query = window.location.search.substring(0);
     $.ajax({
         url: '/user/info'+query,
@@ -10,8 +23,7 @@ $().ready(function (){
             $('.username').text('未获得用户名');
         }
     });
-});
-
+}
 function addUserInfo(user){
     user["registerTime"] = user["registerTime"].replace("T","  ");
 
