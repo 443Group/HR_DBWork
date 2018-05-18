@@ -38,6 +38,7 @@ public class MultiHttpSecurityConfig {
                        .antMatchers("/admin*").hasRole("ADMIN")
                        .anyRequest().authenticated()
                        .and()
+                    .headers().frameOptions().sameOrigin().and()
                     .formLogin()
                     .loginPage("/login.html")
                     .loginProcessingUrl("/login")
