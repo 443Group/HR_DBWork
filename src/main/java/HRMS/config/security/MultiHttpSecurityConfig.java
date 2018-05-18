@@ -35,7 +35,7 @@ public class MultiHttpSecurityConfig {
                     .csrf().disable()
                     .authorizeRequests()
                        .antMatchers("/css/**", "/js/**","/assets/**","/fonts/**","/img/**","/404.html").permitAll()
-                       .antMatchers("/admin*").hasRole("ADMIN")
+                       .antMatchers("/admin*","/*/admin/**").hasRole("ADMIN")
                        .anyRequest().authenticated()
                        .and()
                     .headers().frameOptions().sameOrigin().and()

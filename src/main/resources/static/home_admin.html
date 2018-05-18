@@ -61,13 +61,12 @@
 					  			<h3><a href="attendence_info_admin.html">考勤信息</a></h3>
                   			</div>
                   		</div>
-                  		<div class="col-md-2 col-sm-2 box0">
-                  			<div class="box1">
-					  			<span class="li_pen"></span>
-					  			<h3><a href="#">签到</a></h3>
-                  			</div>
-
-                  		</div>
+						<div class="col-md-2 col-sm-2 box0">
+							<div class="box1">
+								<span class="li_pen"></span>
+								<h3><a href="#" onclick="sign()" id="sign">签到</a></h3>
+							</div>
+						</div>
                   	
                   	</div><!-- /row mt -->	
                   
@@ -196,6 +195,21 @@
 	
 	
 	<script type="application/javascript">
+        function sign(){
+            $.ajax({
+                url: '/sign/sign',
+                type: 'GET',
+                success: function (res) {
+                    if(res === true){
+                        let sign =$("#sign");
+                        sign.text("已签到");
+                        sign.removeAttrs("onclick");
+                        sign.removeAttrs("href");
+                    }
+                },
+            })
+        }
+
         $(document).ready(function () {
             $("#date-popover").popover({html: true, trigger: "manual"});
             $("#date-popover").hide();

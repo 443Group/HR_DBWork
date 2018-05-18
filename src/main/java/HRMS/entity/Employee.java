@@ -30,7 +30,7 @@ public class Employee {
 
     private Integer title;
 
-    private Integer bonus;
+    private Long bonus;
 
     @Column(name = "time_register")
     private LocalDateTime registerTime;
@@ -112,11 +112,11 @@ public class Employee {
         return title;
     }
 
-    public Integer getBonus() {
+    public Long getBonus() {
         return bonus;
     }
 
-    public void setBonus(Integer bonus) {
+    public void setBonus(Long bonus) {
         this.bonus = bonus;
     }
 

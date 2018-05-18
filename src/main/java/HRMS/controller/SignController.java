@@ -28,6 +28,8 @@ public class SignController {
     @Autowired
     private HttpServletRequest request;
 
+
+
     @GetMapping(value = "/sign")
     public Boolean Sign(Principal principal){
         Attendence attendence = new Attendence();

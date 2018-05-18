@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
@@ -10,266 +10,304 @@
 
     <title>个人资料</title>
 
-    <!-- Bootstrap CSS -->    
+    <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- bootstrap theme -->
     <link href="css/bootstrap-theme.css" rel="stylesheet">
     <!--external css-->
     <!-- font icon -->
-    <link href="css/elegant-icons-style.css" rel="stylesheet" />
-    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/elegant-icons-style.css" rel="stylesheet"/>
+    <link href="css/font-awesome.min.css" rel="stylesheet"/>
     <!-- Custom styles -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/style-responsive.css" rel="stylesheet" />
+    <link href="css/style-responsive.css" rel="stylesheet"/>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
     <!--[if lt IE 9]>
-      <script src="js/html5shiv.js"></script>
-      <script src="js/respond.min.js"></script>
-      <script src="js/lte-ie7.js"></script>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <script src="js/lte-ie7.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
-  <!-- container section start -->
-  <section id="container" class="">
-		  <div class="row">
-				<div class="col-lg-12">
-					<h3 class="page-header"><i class="fa fa-user-md"></i> 个人资料</h3>
-					<ol class="breadcrumb">
-						<li><i class="fa fa-home"></i><a href="home.html">主页</a></li>
-						<li><i class="icon_search"></i><a href="emp_search.html">员工查询</a></li>
-						<li><i class="fa fa-user-md"></i>emp_id</li>
-					</ol>
-				</div>
-			</div>
-                    <div class="row">
-                <!-- profile-widget -->
-                <div class="col-lg-12">
-                    <div class="profile-widget profile-widget-info">
-                          <div class="panel-body">
-                            <div class="col-lg-2 col-sm-2">
-                              <h4>张一祥</h4>               
-                              <div class="follow-ava">
-                                  <img src="img/profile-widget-avatar.jpg" alt="">
-                              </div>
-                              <h6>董事长</h6>
-                            </div>
-                            <div class="col-lg-4 col-sm-4 follow-info">
-                                <p>3015216117</p>
-                                <p>592005261@qq.com</p>
-								<p><i class="fa fa-desktop"> 董事会</i></p>
-                                <h6>入职时间：
-                                    <span><i class="icon_clock_alt"></i>11:05 AM</span>
-                                    <span><i class="icon_calendar"></i>25.10.13</span>
-                                </h6>
-                            </div>
-                          </div>
+<body>
+<!-- container section start -->
+<section id="container" class="">
+    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header"><i class="fa fa-user-md"></i> 个人资料</h3>
+            <ol class="breadcrumb">
+                <li><i class="fa fa-home"></i><a href="home.html">主页</a></li>
+                <li><i class="icon_search"></i><a href="emp_search.html">员工查询</a></li>
+                <li><i class="fa fa-user-md"></i><span class="para1"></span></li>
+            </ol>
+        </div>
+    </div>
+    <div class="row">
+        <!-- profile-widget -->
+        <div class="col-lg-12">
+            <div class="profile-widget profile-widget-info">
+                <div class="panel-body">
+                    <div class="col-lg-2 col-sm-2">
+                        <h4 class="para2"></h4>
+                        <div class="follow-ava">
+                            <img src="img/profile-widget-avatar.jpg" alt="">
+                        </div>
+                        <h6 class="para3"></h6>
                     </div>
-                
-              </div>
+                    <div class="col-lg-4 col-sm-4 follow-info">
+                        <p class="para1"></p>
+                        <p class="para7"></p>
+                        <p><i class="fa fa-desktop para4"></i></p>
+                        <h6>入职时间：
+                            <!--                                    <span><i class="icon_clock_alt"></i>11:05 AM</span>
+                                                                <span><i class="icon_calendar"></i>25.10.13</span>-->
+                            <span><i class="icon_calendar"></i><span class="para11"></span></span>
+                        </h6>
+                    </div>
                 </div>
-              <!-- page start-->
-              <div class="row">
-                 <div class="col-lg-12">
-                    <section class="panel">
-                          <header class="panel-heading tab-bg-info">
-                              <ul class="nav nav-tabs">
-                                  <li class="active">
-                                      <a data-toggle="tab" href="#profile">
-                                          <i class="icon-user"></i>
-                                          个人资料
-                                      </a>
-                                  </li>
-                                  <li>
-                                      <a data-toggle="tab" href="#salary">
-                                          <i class="icon-home"></i>
-                                          薪资信息
-                                      </a>
-                                  </li>
-                                  <li class="">
-                                      <a data-toggle="tab" href="#edit-profile">
-                                          <i class="icon-envelope"></i>
-                                          编辑资料
-                                      </a>
-                                  </li>
-                              </ul>
-                          </header>
-                          <div class="panel-body">
-                              <div class="tab-content">
-                                  <div id="profile" class="tab-pane active">
-                                      <section class="panel">
-                                          <div class="panel-body bio-graph-info">
-                                              <div class="row">
-                                                  <div class="bio-row">
-                                                      <p><span>员工ID</span>: <span class="para para1"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>姓名</span>: <span class="para para2"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>职位</span>: <span class="para para3"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>所在部门</span>: <span class="para para4"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>职称</span>: <span class="para para5"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>政治面貌</span>: <span class="para para6"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>Email</span>: <span class="para para7"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>电话</span>: <span class="para para8"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>生日</span>: <span class="para para9"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>健康状况</span>: <span class="para para10"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>注册时间</span>: <span class="para para11"></span></p>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </section>
-                                      <section>
-                                          <div class="row">
-                                          </div>
-                                      </section>
-                                  </div>
-								    <div id="salary" class="tab-pane">
-                                      <section class="panel">
-                                          <div class="panel-body bio-graph-info">
-                                              <div class="row">
-                                                  <div class="bio-row">
-                                                      <p><span>员工ID</span>: <span class="para para1"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>姓名</span>: <span class="para para2"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>所在职位</span>: <span class="para para3"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>岗位月薪</span>: <span class="para para4"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>本年奖金</span>: <span class="para para5"></span></p>
-                                                  </div>
-                                                  <div class="bio-row">
-                                                      <p><span>本年总薪资</span>: <span class="para para6"></span></p>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </section>
-                                      <section>
-                                          <div class="row">
-                                          </div>
-                                      </section>
-                                  </div>
-                                  <div id="edit-profile" class="tab-pane">
-                                    <section class="panel">                                          
-                                          <div class="panel-body bio-graph-info">
-                                              <h1> 编辑资料</h1>
-                                              <form class="form-horizontal" role="form">                                                  
-                                                  <div class="form-group ">
-                                          <label for="cname" class="control-label col-lg-2">姓名</label>
-                                          <div class="col-lg-6">
-                                              <input class="form-control" id="cname" name="fullname" minlength="2" type="text" required />
-                                          </div>
-                                      </div>
-									  <div class="form-group ">
-                                          <label for="password" class="control-label col-lg-2">登录密码</label>
-                                          <div class="col-lg-6">
-                                              <input class="form-control " id="password" name="password" minlength="6" type="password" />
-                                          </div>
-                                      </div>
-									  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">电话号码</label>
-                                                      <div class="col-lg-6">
-                                                          <input type="tel" class="form-control" id="phone" name="phone" minlength="11">
-                                                      </div>
-                                                  </div>
-                                      <div class="form-group ">
-                                          <label for="cemail" class="control-label col-lg-2">E-Mail</label>
-                                          <div class="col-lg-6">
-                                              <input class="form-control " id="cemail" type="email" name="email" required />
-                                          </div>
-                                      </div>
-									  <div class="form-group ">
-                                          <label for="cemail" class="control-label col-lg-2">出生日期</label>
-                                          <div class="col-lg-6">
-                                              <input class="form-control " id="cbirthday" type="date" name="birthday" value="1997-01-01" required />
-                                          </div>
-                                      </div>
-									  <div class="form-group">
-                                      <label class="col-lg-2 control-label">政治面貌</label>
-                                      <div class="col-lg-6">
-                                      <select class="form-control m-bot15" id="political" name="political">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-										 </div>
-									  </div>
-									  <div class="form-group">
-                                      <label class="col-lg-2 control-label">职称</label>
-                                      <div class="col-lg-6">
-                                      <select class="form-control m-bot15" id="title" name="title">
-                                              <option>Option 1</option>
-                                              <option>Option 2</option>
-                                              <option>Option 3</option>
-                                          </select>
-										 </div>
-									  </div>
-									  <div class="form-group">
-                                                      <label class="col-lg-2 control-label">本年奖金</label>
-                                                      <div class="col-lg-6">
-                                                          <input type="number" class="form-control" id="bonus" name="bonus">
-                                                      </div>
-                                                  </div>
-                                      <div class="form-group">
-                                          <div class="col-lg-offset-4 col-lg-6">
-                                              <button class="btn btn-primary" type="submit">保存</button>
-                                              <button class="btn btn-default" type="button">取消</button>
-                                          </div>
-                                      </div>
-                                              </form>
-                                          </div>
-                                      </section>
-                                  </div>
-                              </div>
-                          </div>
-                      </section>
-                 </div>
-              </div>
-              <!-- page end-->
-      <!--main content end-->
-  </section>
-  <!-- container section end -->
-    <!-- javascripts -->
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <!-- nice scroll -->
-    <script src="js/jquery.scrollTo.min.js"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
-    <!-- jquery knob -->
-    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
-    <!--custome script for all page-->
-    <script src="js/scripts.js"></script>
+            </div>
+        </div>
+    </div>
+    <!-- page start-->
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading tab-bg-info">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#profile">
+                                <i class="icon-user"></i>
+                                个人资料
+                            </a>
+                        </li>
+                        <li>
+                            <a data-toggle="tab" href="#salary">
+                                <i class="icon-home"></i>
+                                薪资信息
+                            </a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#edit-profile">
+                                <i class="icon-envelope"></i>
+                                编辑资料
+                            </a>
+                        </li>
+                    </ul>
+                </header>
+                <div class="panel-body">
+                    <div class="tab-content">
+                        <div id="profile" class="tab-pane active">
+                            <section class="panel">
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class="bio-row">
+                                            <p><span>员工ID</span>: <span class="para para1"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>姓名</span>: <span class="para para2"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>职位</span>: <span class="para para3"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>所在部门</span>: <span class="para para4"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>职称</span>: <span class="para para5"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>政治面貌</span>: <span class="para para6"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>Email</span>: <span class="para para7"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>电话</span>: <span class="para para8"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>生日</span>: <span class="para para9"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>健康状况</span>: <span class="para para10"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>注册时间</span>: <span class="para para11"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                </div>
+                            </section>
+                        </div>
+                        <div id="salary" class="tab-pane">
+                            <section class="panel">
+                                <div class="panel-body bio-graph-info">
+                                    <div class="row">
+                                        <div class="bio-row">
+                                            <p><span>员工ID</span>: <span class="para para1"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>姓名</span>: <span class="para para2"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>所在职位</span>: <span class="para para3"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>岗位月薪</span>: <span class="para param1"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>本年奖金</span>: <span class="para param2"></span></p>
+                                        </div>
+                                        <div class="bio-row">
+                                            <p><span>本年总薪资</span>: <span class="para param3"></span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <section>
+                                <div class="row">
+                                </div>
+                            </section>
+                        </div>
+                        <div id="edit-profile" class="tab-pane">
+                            <section class="panel">
+                                <div class="panel-body bio-graph-info">
+                                    <h1> 编辑资料</h1>
+                                    <form class="form-horizontal" role="form" action="/user/admin/update">
+                                        <div class="form-group ">
+                                            <label for="cname" class="control-label col-lg-2">姓名</label>
+                                            <div class="col-lg-6">
+                                                <input class="form-control" id="cname" name="name" minlength="2"
+                                                       type="text" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="password" class="control-label col-lg-2">登录密码</label>
+                                            <div class="col-lg-6">
+                                                <input class="form-control " id="password" name="password" minlength="6"
+                                                       type="password"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">电话号码</label>
+                                            <div class="col-lg-6">
+                                                <input type="tel" class="form-control" id="phoneNumber" name="phone"
+                                                       minlength="11">
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="cemail" class="control-label col-lg-2">E-Mail</label>
+                                            <div class="col-lg-6">
+                                                <input class="form-control " id="cemail" type="email" name="email"
+                                                       required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="cemail" class="control-label col-lg-2">出生日期</label>
+                                            <div class="col-lg-6">
+                                                <input class="form-control " id="cbirthday" type="date" name="date"
+                                                       value="1997-01-01" required/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">政治面貌</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control m-bot15" id="political" name="political">
+                                                    <option value="7">中共党员</option>
+                                                    <option value="8">中共预备党员</option>
+                                                    <option value="9">共青团员</option>
+                                                    <option value="10">民革党员</option>
+                                                    <option value="11">民盟盟员</option>
+                                                    <option value="12">民建会员</option>
+                                                    <option value="13">民进会员</option>
+                                                    <option value="14">农工党党员</option>
+                                                    <option value="15">致公党党员</option>
+                                                    <option value="16">九三学社社员</option>
+                                                    <option value="17">台盟盟员</option>
+                                                    <option value="18">无党派人士</option>
+                                                    <option value="19">群众</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">职称</label>
+                                            <div class="col-lg-6">
+                                                <select class="form-control m-bot15" id="title" name="title">
+                                                    <option value="1">助理工程师</option>
+                                                    <option value="2">工程师</option>
+                                                    <option value="3">高级工程师</option>
+                                                    <option value="4">正高级工程师</option>
+                                                    <option value="5">助理经济师</option>
+                                                    <option value="6">经济师</option>
+                                                    <option value="7">高级经济师</option>
+                                                    <option value="8">正高级经济师</option>
+                                                    <option value="9">助理会计师</option>
+                                                    <option value="10">会计师</option>
+                                                    <option value="11">高级会计师</option>
+                                                    <option value="12">正高级会计师</option>
+                                                    <option value="13">助理审计师</option>
+                                                    <option value="14">审计师</option>
+                                                    <option value="15">高级审计师</option>
+                                                    <option value="16">正高级审计师</option>
+                                                    <option value="17">四级律师</option>
+                                                    <option value="18">三级律师</option>
+                                                    <option value="19">二级律师</option>
+                                                    <option value="20">一级律师</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-lg-2 control-label">本年奖金</label>
+                                            <div class="col-lg-6">
+                                                <input type="number" class="form-control" id="bonus" name="bonus">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-lg-offset-4 col-lg-6">
+                                                <button class="btn btn-primary" type="submit">保存</button>
+                                                <button class="btn btn-default" type="button">取消</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <!-- page end-->
+    <!--main content end-->
+</section>
+<!-- container section end -->
+<!-- javascripts -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<!-- nice scroll -->
+<script src="js/jquery.scrollTo.min.js"></script>
+<script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+<!-- jquery knob -->
+<script src="assets/jquery-knob/js/jquery.knob.js"></script>
+<!--custome script for all page-->
+<script src="js/scripts.js"></script>
+<script src="js/ajax.js"></script>
+<script>
+    $().ready(function () {
+        getUserInfo();
+    });
+</script>
 
-  <script>
+<script>
 
-      //knob
-      $(".knob").knob();
+    //knob
+    $(".knob").knob();
 
-  </script>
+</script>
 
 
-  </body>
+</body>
 </html>
