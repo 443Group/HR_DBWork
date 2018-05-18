@@ -39,7 +39,7 @@
 					<ol class="breadcrumb">
 						<li><i class="fa fa-home"></i><a href="home.html">主页</a></li>
 						<li><i class="icon_search"></i><a href="dep_list.html">部门列表</a></li>
-						<li><i class="fa fa-user-md"></i>dep_id</li>
+						<li><i class="fa fa-user-md"></i><span class="para1"></span></li>
 					</ol>
 				</div>
 			</div>
@@ -53,16 +53,16 @@
                               <div class="follow-ava">
                                   <img src="img/profile-widget-avatar.jpg" alt="">
                               </div>
-                              <h4>董事会</h4>
+                              <h4 class="para2"></h4>
                             </div>
                             <div class="col-lg-4 col-sm-4 follow-info">
-                                <h6><i class="icon_profile"></i> 总经理：
-                                    <span>张一祥</span>
+                                <h6><i class="icon_profile"></i> 部门经理：
+                                    <span class="para3"></span>
                                 </h6>
-                                <p>15822397501</p>
-								<p><i class="icon_pin_alt"> 天津</i></p>
+                                <p class="para5"></p>
+								<p><i class="icon_pin_alt para4"> </i></p>
                                 <h6><i class="icon_desktop"></i> 上级部门：
-                                    <span>无</span>
+                                    <span class="para6"></span>
                                 </h6>
                             </div>
                           </div>
@@ -96,28 +96,28 @@
                                           <div class="panel-body bio-graph-info">
                                               <div class="row">
                                                   <div class="bio-row">
-                                                      <p><span>部门ID</span>: <span id="para1">3015216117</span></p>
+                                                      <p><span>部门ID</span>: <span class="para1"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>部门名称</span>: <span id="para1">董事会</span></p>
+                                                      <p><span>部门名称</span>: <span class="para2"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>部门经理</span>: <span id="para1">张一祥</span></p>
+                                                      <p><span>部门经理</span>: <span class="para3"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>所在地址</span>: <span id="para1">天津</span></p>
+                                                      <p><span>所在地址</span>: <span class="para4"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>联系电话</span>: <span id="para1">15822397501</span></p>
+                                                      <p><span>联系电话</span>: <span class="para5"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>上级部门</span>: <span id="para1">无</span></p>
+                                                      <p><span>上级部门</span>: <span class="para6"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>部门信息</span>: <span id="para1">无</span></p>
+                                                      <p><span>部门信息</span>: <span class="para7"></span></p>
                                                   </div>
                                                   <div class="bio-row">
-                                                      <p><span>员工人数</span>: <span id="para1">1</span></p>
+                                                      <p><span>员工人数</span>: <span class="para8"></span></p>
                                                   </div>
                                               </div>
                                           </div>
@@ -164,9 +164,14 @@
                   </div>
                  </div>
               </div>
+                          </div>
+                    </section>
+                 </div>
+              </div>
+  </section>
               <!-- page end-->
       <!--main content end-->
-  </section>
+
   <!-- container section end -->
     <!-- javascripts -->
     <script src="js/jquery.js"></script>
@@ -182,7 +187,8 @@
   <script src="js/ajax.js"></script>
   <script>
       $().ready(function (){
-
+          $.base64.utf8encode = true;
+          getDepInfoFromUrl();
       });
   </script>
 

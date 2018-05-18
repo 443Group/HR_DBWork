@@ -37,15 +37,42 @@ function getDepList() {
 }
 function getDepInfoFromUrl() {
     let info = getUrlPara('info');
-    info = $.base64.decode(info);
+    info = decodeURI(info);
+    $.base64.utf8encode = true;
+    info = unescape($.base64.decode(info));
+    info = JSON.parse(info);
+
+    $.ajax({
+        url: '/dep/number'+info["depId"],
+        type: 'GET',
+        success: function (num) {
+            $(".para8").text(num);
+        },
+        error: function () {
+            alert("连接超时！")
+        }
+    });
+
+    if(info["info"] == null)
+        info["info"] = "无";
+    $(".para1").text(info["depId"]);
+    $(".para2").text(info["depName"]);
+    $(".para3").text(info["mgrName"]);
+    $(".para4").text(info["addr"]);
+    $(".para5").text(info["phoneNumber"]);
+    $(".para6").text(info["parentName"]);
+    $(".para7").text(info["info"]);
 }
 
 function addDepList(list) {
     $.each(list, function(i, item){
+        // alert(JSON.stringify(item));
         let content = '';
-        let base64 = $.base64.encode(item);
-        if(item["parentName"] ==="null")
+        if(item["parentName"] == null)
             item["parentName"] = "无";
+        $.base64.utf8encode = true;
+        let base64 = $.base64.encode(escape(JSON.stringify(item)));
+        info = unescape($.base64.decode(base64));
         content += '<td>'+item["depId"]+'</td>';
         content += '<td>'+item["depName"]+'</td>';
         content += '<td>'+item["mgrName"]+'</td>';

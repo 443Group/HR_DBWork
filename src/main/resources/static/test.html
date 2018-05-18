@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>部门资料</title>
+
+    <!-- Bootstrap CSS -->    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <!-- Custom styles -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+      <script src="js/lte-ie7.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+  <div id='q'>
+  <div>
+
+  <!-- container section end -->
+    <!-- javascripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- nice scroll -->
+    <script src="js/jquery.scrollTo.min.js"></script>
+    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <!-- jquery knob -->
+    <script src="assets/jquery-knob/js/jquery.knob.js"></script>
+    <!--custome script for all page-->
+    <script src="js/scripts.js"></script>
+  <script src="js/jquery.base64.js"></script>
+  <script src="js/ajax.js"></script>
+  <script>
+      $().ready(function (){
+	   var list = '[{"depId":1,"depName":"董事会","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":2,"depName":"人力资源部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":3,"depName":"技术开发部","mgrName":"张一弛","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":4,"depName":"市场营销部","mgrName":"张林","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":5,"depName":"审计部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":6,"depName":"法律事务部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":7,"depName":"财政部","mgrName":"李子亮","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":8,"depName":"总经理办公室","mgrName":"张浩","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":9,"depName":"总务后勤部","mgrName":"赵崟杰","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":10,"depName":"行政管理部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":null},{"depId":11,"depName":"移动开发部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":"技术开发部"},{"depId":12,"depName":"大数据研发部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":"技术开发部"},{"depId":13,"depName":"人工智能研发部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":"技术开发部"},{"depId":14,"depName":"应用软件开发部","mgrName":"张一祥","phoneNumber":"15822397501","addr":"天津","info":"无","parentName":"技术开发部"}]'
+ 
+	  var q=$("#q");
+	  
+    $.each(list, function(i, item){
+        let content = '';
+
+
+		q.append(item);
+    });
+	
+	
+      });
+  </script>
+
+  <script>
+
+      //knob
+      $(".knob").knob();
+
+  </script>
+
+
+  </body>
+</html>
